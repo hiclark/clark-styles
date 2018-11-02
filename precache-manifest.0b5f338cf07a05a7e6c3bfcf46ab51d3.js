@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/clark-styles/static/js/runtime~main.92f717a7.js"
   },
   {
-    "revision": "1c8ba481a025bb6c1edb",
-    "url": "/clark-styles/static/js/main.1c8ba481.chunk.js"
+    "revision": "c0f32860a26ada865fdd",
+    "url": "/clark-styles/static/js/main.c0f32860.chunk.js"
   },
   {
     "revision": "001dd84a05c0523ed17c",
     "url": "/clark-styles/static/js/1.001dd84a.chunk.js"
   },
   {
-    "revision": "1c8ba481a025bb6c1edb",
+    "revision": "c0f32860a26ada865fdd",
     "url": "/clark-styles/static/css/main.6d2b29ea.chunk.css"
   },
   {
-    "revision": "0d8b8fa3ad420bd4328f64d5766af57b",
+    "revision": "bfb54262dd874d04d9c1c23871b441e4",
     "url": "/clark-styles/index.html"
   }
 ];
