@@ -33,7 +33,7 @@ const Z_INDEX = {
   Z1,
   Z2,
   Z3,
-  Z_Top,
+  Z_TOP,
 };
 
 export default Z_INDEX;
