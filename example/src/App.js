@@ -1,12 +1,14 @@
-import React from 'react'
+// @flow
+import React from 'react';
 
-import {Grid, Row, Col, COLORS, SPACING} from 'clark-styles'
-import styled from 'styled-components'
+// $FlowFixMe
+import { Grid, Row, Col, COLORS, SPACING } from 'clark-styles';
+import styled from 'styled-components';
 
 const App = () => (
   <Grid>
     <Row>
-      <StyledCol sm={"test"} md={12} lg={12} />
+      <StyledCol sm="test" md={12} lg={12} />
     </Row>
     <Row>
       <StyledCol sm={12} md={6} lg={6} />
