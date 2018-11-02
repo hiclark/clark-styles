@@ -1,8 +1,0 @@
-{
-  "short_name": "clark-styles",
-  "name": "clark-styles",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
