@@ -1,0 +1,27 @@
+[ignore]
+.*/dist/*
+.*/build/.*
+.*/public/.*
+.*/config/.*
+.*/node_modules/.*
+.*/scripts/.*
+.*test\.js
+.*\.ignore\.js
+
+[include]
+
+[libs]
+./flow-typed/
+./node_modules/redux-form/.*
+
+[lints]
+sketchy-null=warn
+untyped-type-import=warn
+untyped-import=warn
+unclear-type=warn
+
+[options]
+all=true
+module.name_mapper.extension='css' -> '<PROJECT_ROOT>/CSSFlowStub.js.flow'
+
+[strict]
