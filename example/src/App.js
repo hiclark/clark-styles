@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const App = () => (
   <Grid>
     <Row>
-      <StyledCol sm={12} md={12} lg={12} />
+      <StyledCol sm={"test"} md={12} lg={12} />
     </Row>
     <Row>
       <StyledCol sm={12} md={6} lg={6} />
