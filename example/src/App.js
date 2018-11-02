@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Grid, Row, Col} from 'clark-styles'
+import {Grid, Row, Col, COLORS, SPACING} from 'clark-styles'
 import styled from 'styled-components'
 
 const App = () => (
@@ -28,7 +28,7 @@ const App = () => (
 export default App;
 
 const StyledCol = styled(Col)`
-  background: pink;
-  height: 5rem;
-  margin-top: 1rem;
+  background: ${COLORS.CLARK_PRIMARY};
+  height: ${SPACING.EXTRA_LARGE};
+  margin-top: ${SPACING.MEDIUM};
 `;

@@ -3,7 +3,7 @@
 import { type ComponentType } from 'react';
 
 import styled from 'styled-components';
-import { SPACING_EXTRA_LARGE } from '../../constants/spacing';
+import SPACING from '../../constants/spacing';
 import MAX_WIDTH from '../../constants/max-width';
 
 type GridPropsType = {
@@ -11,7 +11,7 @@ type GridPropsType = {
 };
 
 export const Grid: ComponentType<GridPropsType> = styled.div`
-  padding: 0 ${SPACING_EXTRA_LARGE};
+  padding: 0 ${SPACING.EXTRA_LARGE};
   ${MAX_WIDTH};
   margin: ${({ margin }) => margin || '0 auto'};
 `;

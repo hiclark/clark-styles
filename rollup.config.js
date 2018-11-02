@@ -31,7 +31,8 @@ export default {
     svgr(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      plugins: [ 'external-helpers' ],
+      presets: [ 'flow', 'react', 'stage-0' ]
     }),
     resolve(),
     commonjs()
