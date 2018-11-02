@@ -1,6 +1,11 @@
 // @flow
 
-import React, { Children, cloneElement, type ComponentType, type Node } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  type ComponentType,
+  type Node,
+} from 'react';
 
 import styled from 'styled-components';
 import { identifyFirsts } from './helpers';

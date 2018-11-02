@@ -18,7 +18,7 @@ const LIGHT_GRAY_10 = '#ecebef';
 
 const OFF_WHITE_3 = '#f9f9fa';
 
-const WHITE = '#ffffff';
+const WHITE = '#ffffff';
 
 const COLORS = {
   CLARK_PRIMARY,
@@ -31,6 +31,6 @@ const COLORS = {
   LIGHT_GRAY_10,
   OFF_WHITE_3,
   WHITE,
-}
+};
 
 export default COLORS;

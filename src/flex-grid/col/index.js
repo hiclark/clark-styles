@@ -26,7 +26,8 @@ const singleColumnWidth = `calc(${availableWidthAfterMargins} / 12)`;
 // number of columns it occupies x width of a single column + width of straddled gutters
 // - W.P. 10/2018
 const calculateWidth = (cols: number) =>
-  `calc(${cols} * ${singleColumnWidth} + calc(${cols - 1} * ${DOUBLE_GUTTER_SPACING}))`;
+  `calc(${cols} * ${singleColumnWidth} + calc(${cols -
+    1} * ${DOUBLE_GUTTER_SPACING}))`;
 
 const calculateMarginLeft = (first: boolean, offset: ?number) => {
   if (offset) {

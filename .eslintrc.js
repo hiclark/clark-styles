@@ -42,6 +42,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true
     }],
+    'import/no-named-as-default-member': 0,
     'jsx-a11y/anchor-is-valid': ['error', {
       components: ['Link'],
       specialLink: ['to', 'hrefLeft', 'hrefRight'],
