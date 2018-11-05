@@ -2,15 +2,15 @@
 
 import { css } from 'styled-components';
 
-export const FW_700 = css`
+const FW_700 = css`
   font-weight: 700;
 `;
 
-export const FW_400 = css`
+const FW_400 = css`
   font-weight: 400;
 `;
 
-export const FW_100 = css`
+const FW_100 = css`
   font-weight: 100;
 `;
 
