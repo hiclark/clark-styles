@@ -2,25 +2,25 @@
 
 import { css } from 'styled-components';
 
-const F1 = css`
+const BR_1 = css`
   border-radius: 0.125rem;
 `;
-const F2 = css`
+const BR_2 = css`
   border-radius: 0.25rem;
 `;
-const F3 = css`
+const BR_3 = css`
   border-radius: 0.5rem;
 `;
 
-const F4 = css`
+const BR_4 = css`
   border-radius: 1rem;
 `;
 
-const F5 = css`
+const BR_5 = css`
   border-radius: 1.25rem;
 `;
 
-const F6 = css`
+const BR_6 = css`
   border-radius: 1.5rem;
 `;
 
@@ -29,12 +29,12 @@ const CIRCLE = css`
 `;
 
 const BORDER_RADIUS = {
-  F1,
-  F2,
-  F3,
-  F4,
-  F5,
-  F6,
+  BR_1,
+  BR_2,
+  BR_3,
+  BR_4,
+  BR_5,
+  BR_6,
   CIRCLE,
 };
 

@@ -2,40 +2,40 @@
 
 import { css } from 'styled-components';
 
-const F0 = css`
+const TS_0 = css`
   font-size: 2.25rem;
 `;
-const F1 = css`
+const TS_1 = css`
   font-size: 1.75rem;
 `;
-const F2 = css`
+const TS_2 = css`
   font-size: 1.5rem;
 `;
-const F3 = css`
+const TS_3 = css`
   font-size: 1.25rem;
 `;
-const F4 = css`
+const TS_4 = css`
   font-size: 1.125rem;
 `;
-const F5 = css`
+const TS_5 = css`
   font-size: 1rem;
 `;
-const F6 = css`
+const TS_6 = css`
   font-size: 0.875rem;
 `;
-const F7 = css`
+const TS_7 = css`
   font-size: 0.75rem;
 `;
 
 const TYPE_SCALE = {
-  F0,
-  F1,
-  F2,
-  F3,
-  F4,
-  F5,
-  F6,
-  F7,
+  TS_0,
+  TS_1,
+  TS_2,
+  TS_3,
+  TS_4,
+  TS_5,
+  TS_6,
+  TS_7,
 };
 
 export default TYPE_SCALE;

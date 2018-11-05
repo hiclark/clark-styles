@@ -7,19 +7,19 @@ const Z_BOTTOM = css`
   z-index: -1;
 `;
 
-const Z0 = css`
+const Z_0 = css`
   z-index: 0;
 `;
 
-const Z1 = css`
+const Z_1 = css`
   z-index: 1;
 `;
 
-const Z2 = css`
+const Z_2 = css`
   z-index: 2;
 `;
 
-const Z3 = css`
+const Z_3 = css`
   z-index: 3;
 `;
 
@@ -29,10 +29,10 @@ const Z_TOP = css`
 
 const Z_INDEX = {
   Z_BOTTOM,
-  Z0,
-  Z1,
-  Z2,
-  Z3,
+  Z_0,
+  Z_1,
+  Z_2,
+  Z_3,
   Z_TOP,
 };
 
