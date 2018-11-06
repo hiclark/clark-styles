@@ -1,7 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 0.3.0 - 2018-11-05
+## 0.3.1 - 2018-11-06
+### Fixed
+- Release issue with 0.3.0
+
+## 0.3.0 - 2018-11-06
 ### Added
 - All styling constants in this lib
 
