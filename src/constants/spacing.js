@@ -1,23 +1,21 @@
 // @flow
 
-export const NONE = '0';
-export const EXTRA_SMALL = '.25rem';
-export const SMALL = '.5rem';
-export const MEDIUM = '1rem';
-export const LARGE = '2rem';
-export const EXTRA_LARGE = '4rem';
-export const EXTRA_EXTRA_LARGE = '8rem';
-export const EXTRA_EXTRA_EXTRA_LARGE = '16rem';
+export const S_025 = '.25rem'; // 4px
+export const S_05 = '.5rem'; // 8px
+export const S_1 = '1rem'; // 16px
+export const S_2 = '2rem'; // 32px
+export const S_4 = '4rem'; // 64px
+export const S_6 = '6rem'; // 96px
+export const S_8 = '8rem'; // 128px
 
 const SPACING = {
-  NONE,
-  EXTRA_SMALL,
-  SMALL,
-  MEDIUM,
-  LARGE,
-  EXTRA_LARGE,
-  EXTRA_EXTRA_LARGE,
-  EXTRA_EXTRA_EXTRA_LARGE,
+  S_025,
+  S_05,
+  S_1,
+  S_2,
+  S_4,
+  S_6,
+  S_8,
 };
 
 export default SPACING;

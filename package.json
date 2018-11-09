@@ -72,5 +72,8 @@
   "files": [
     "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react-router-dom": "^4.3.1"
+  }
 }
