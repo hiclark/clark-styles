@@ -1,0 +1,23 @@
+# dependencies
+/node_modules
+
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Development folders and files
+/example
+/flow-typed
+/src
+rollup.config.js
+CHANGELOG.md
+
+# Linters
+.eslintrc.js
+
+# Dot files/folders
+.babelrc
+.gitignore
+.flowconfig
+.circleci/*
+.github/*
