@@ -1,7 +1,7 @@
 {
   "name": "clark-styles",
   "version": "0.3.1",
-  "description": "Shared styles for clark frontends",
+  "description": "Clark style and pattern library",
   "author": "hiclark",
   "license": "MIT",
   "repository": "hiclark/clark-styles",
@@ -29,6 +29,10 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
     "styled-components": "2.x - 3.x"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -71,6 +75,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {}
+  ]
 }

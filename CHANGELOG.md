@@ -1,6 +1,19 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.4.0 - 2018-11-12
+### Added
+- PR template
+- .npmignore file
+- Breadcrumbs header component
+
+### Changed
+- Readme
+- Constant styles naming
+  
+### Fixed
+- Type scale contant export
+
 ## 0.3.1 - 2018-11-06
 ### Fixed
 - Release issue with 0.3.0

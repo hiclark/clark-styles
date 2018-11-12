@@ -11,9 +11,10 @@ type GridPropsType = {
 };
 
 export const Grid: ComponentType<GridPropsType> = styled.div`
-  padding: 0 ${SPACING.EXTRA_LARGE};
+  padding: 0 ${SPACING.S_4};
   ${MAX_WIDTH};
   margin: ${({ margin }) => margin || '0 auto'};
+  width: 100%;
 `;
 
 export default Grid;
