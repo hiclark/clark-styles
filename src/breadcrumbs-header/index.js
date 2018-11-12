@@ -5,7 +5,6 @@ import flatMap from 'lodash/flatMap';
 import styled from 'styled-components';
 
 import { Grid, Row, Col } from '../flex-grid';
-import SPACING from '../constants/spacing';
 import TYPE_SCALE from '../constants/type-scale';
 import BORDER_WIDTH from '../constants/border-width';
 import COLORS from '../constants/colors';
