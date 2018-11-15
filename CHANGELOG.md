@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.5.0 - 2018-11-15
+### Added
+- verticalMargin, marginTop, marginBottom flags to Grid
+- centered flag to Col
+
+### Fixed
+- media queries use px instead of em now
+
 ## 0.4.0 - 2018-11-12
 ### Added
 - PR template
