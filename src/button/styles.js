@@ -2,25 +2,25 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-import { TYPE_SCALE_F6 } from 'styles/type-scale';
-import { FONT_WEIGHT_700 } from 'styles/font-weight';
-import {
-  CLARK_PRIMARY,
-  CLARK_SECONDARY,
-  GREY_25,
-  BORDER_COLOR_PRIMARY,
-  BUTTON_COLOR_PRIMARY,
-  BUTTON_COLOR_SECONDARY,
-  BUTTON_COLOR_TERTIARY,
-  WHITE,
-  TRANSPARENT,
-} from 'styles/colors';
-import { BORDER_RADIUS_F2 } from 'styles/border-radius';
-import { BORDER_WIDTH_1 } from 'styles/borders';
-import { SPACING_MEDIUM, SPACING_LARGE } from 'styles/spacing';
-import { Z_INDEX_1, Z_INDEX_BOTTOM } from 'styles/z-index';
+import TYPE_SCALE from '../constants/type-scale';
+import BORDER_WIDTH from '../constants/border-width';
+import BORDER_RADIUS from '../constants/border-radius';
+import COLORS from '../constants/colors';
+import FONT_WEIGHT from '../constants/font-weight';
+import SPACING from '../constants/spacing';
+import Z_INDEX from '../constants/z-index';
+import MEDIA from '../constants/media-queries';
 
-import media from 'styles/media-queries';
+const { CLARK_PRIMARY, GREY_100, GREY_50, GREY_25, WHITE } = COLORS;
+const { TS_6 } = TYPE_SCALE;
+const { BW_1 } = BORDER_WIDTH;
+const { FW_700 } = FONT_WEIGHT;
+const { BR_2 } = BORDER_RADIUS;
+const { S_1, S_2 } = SPACING;
+const { Z_1, Z_BOTTOM } = Z_INDEX;
+
+const BUTTON_COLOR_PRIMARY = '#FF6B18';
+const BUTTON_COLOR_SECONDARY = '#c43d00';
 
 const MAX_WIDTH = '17.5rem';
 
@@ -32,7 +32,7 @@ const primary = css`
 const secondary = css`
   max-width: 100%;
   width: 100%;
-  ${media.small`
+  ${MEDIA.small`
     max-width: ${MAX_WIDTH};
     width: auto;
   `};
@@ -51,8 +51,9 @@ const buttonLayout = {
 const solid = disabled => css`
   background: ${disabled
     ? GREY_25
-    : `linear-gradient(109deg, ${BUTTON_COLOR_SECONDARY}, ${BUTTON_COLOR_PRIMARY})`};
-  box-shadow: ${props => (props.disabled ? '' : '0 2px 8px 0 rgba(234, 73, 0, 0.2)')};
+    : `linear-gradient(109deg, ${BUTTON_COLOR_PRIMARY}, ${CLARK_PRIMARY})`};
+  box-shadow: ${props =>
+    props.disabled ? '' : '0 2px 8px 0 rgba(234, 73, 0, 0.2)'};
   border: 0;
   color: ${WHITE};
 `;
@@ -60,21 +61,21 @@ const solid = disabled => css`
 const outline = disabled => css`
   background: ${disabled ? GREY_25 : WHITE};
   border: ${disabled
-    ? `${BORDER_WIDTH_1} solid ${GREY_25}`
-    : `${BORDER_WIDTH_1} solid ${BUTTON_COLOR_PRIMARY}`};
+    ? `${BW_1} solid ${GREY_25}`
+    : `${BW_1} solid ${CLARK_PRIMARY}`};
   color: ${disabled ? WHITE : CLARK_PRIMARY};
 
   &:hover {
-    border: ${BORDER_WIDTH_1} solid ${TRANSPARENT};
+    border: ${BW_1} solid transparent;
     color: ${disabled ? WHITE : WHITE};
   }
 `;
 
 const outlineSecondary = disabled => css`
-  ${FONT_WEIGHT_700};
+  ${FW_700};
   background: ${WHITE};
-  border: ${BORDER_WIDTH_1} solid ${disabled ? GREY_25 : BORDER_COLOR_PRIMARY};
-  color: ${disabled ? GREY_25 : CLARK_SECONDARY};
+  border: ${BW_1} solid ${disabled ? GREY_25 : GREY_50};
+  color: ${disabled ? GREY_25 : GREY_100};
   cursor: ${disabled ? 'auto' : 'pointer'};
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -102,15 +103,15 @@ export const Container = styled.span`
 `;
 
 export const ButtonStyle = styled.button`
-  ${TYPE_SCALE_F6};
-  ${BORDER_RADIUS_F2};
-  ${Z_INDEX_1};
+  ${TS_6};
+  ${BR_2};
+  ${Z_1};
   align-items: center;
   cursor: pointer;
   display: flex;
   justify-content: center;
   outline: 0;
-  padding: ${SPACING_MEDIUM} ${SPACING_LARGE};
+  padding: ${S_1} ${S_2};
   position: relative;
   margin: ${({ margin }) => margin};
   ${({ layout }) => buttonLayout[layout]};
@@ -118,10 +119,11 @@ export const ButtonStyle = styled.button`
   ${({ disabled }) => disabled && 'pointer-events: none;'};
 
   &::before {
-    ${BORDER_RADIUS_F2};
-    ${Z_INDEX_BOTTOM};
-    background: ${BUTTON_COLOR_TERTIARY};
-    background: ${({ disabled }) => (disabled ? GREY_25 : BUTTON_COLOR_TERTIARY)};
+    ${BR_2};
+    ${Z_BOTTOM};
+    background: ${BUTTON_COLOR_SECONDARY};
+    background: ${({ disabled }) =>
+      disabled ? GREY_25 : BUTTON_COLOR_SECONDARY};
     bottom: 0;
     content: '';
     left: 0;
@@ -144,6 +146,6 @@ export const ButtonLink = ButtonStyle.withComponent(Link);
 export const Icon = styled.div`
   left: 0;
   position: absolute;
-  padding: ${SPACING_MEDIUM};
+  padding: ${S_1};
   line-height: 0;
 `;
