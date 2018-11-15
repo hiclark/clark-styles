@@ -16,6 +16,7 @@ type ColPropsType = {
   mdOffset?: number,
   lg: number,
   lgOffset?: number,
+  centered?: boolean,
 };
 
 const widthOfInnerMargins = `calc(11 * ${DOUBLE_GUTTER_SPACING})`;
@@ -43,6 +44,12 @@ const calculateMarginLeft = (first: boolean, offset: ?number) => {
 
 export const Col: ComponentType<ColPropsType> = styled.div`
   flex: 0 0 auto;
+  ${({ centered }) =>
+    centered &&
+    `
+      display: flex;
+      justify-content: center;
+    `}
   width: ${({ sm }) => calculateWidth(sm)};
   ${({ smFirst, smOffset }) => calculateMarginLeft(smFirst, smOffset)};
   ${media.medium`
