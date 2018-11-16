@@ -6,7 +6,9 @@ import styled from 'styled-components';
 import COLORS from '../constants/colors';
 import SPACING from '../constants/spacing';
 
-Modal.setAppElement('#root');
+if (document && document.getElementById('#root')) {
+  Modal.setAppElement('#root');
+}
 
 const ReactModalAdapter = ({ className, ...props }) => {
   const contentClassName = `${className}__content`;
