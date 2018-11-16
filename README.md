@@ -1,5 +1,4 @@
 # Clark Styles
----
 Clark style and pattern library
 
 [![NPM](https://img.shields.io/npm/v/clark-styles.svg)](https://www.npmjs.com/package/clark-styles)
@@ -71,7 +70,9 @@ const App = () => (
 
 ### Dependencies
 
-`BreadcrumbsHeader` component has introduced two additional dependencies `lodash` and `react-router-dom`. We may choose to refactor and decouple these dependencies at a later time but for now this works best within our system.
+- `BreadcrumbsHeader` component has introduced two additional dependencies `lodash` and `react-router-dom`. We may choose to refactor and decouple these dependencies at a later time but for now this works best within our system.
+- `Button` component depends on `react-router-dom`
+- `Modal` component depends on `react-modal`
 
 ### License
 
