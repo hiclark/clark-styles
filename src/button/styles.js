@@ -30,7 +30,6 @@ const primary = css`
 `;
 
 const secondary = css`
-  max-width: 100%;
   width: 100%;
   ${MEDIA.small`
     max-width: ${MAX_WIDTH};
@@ -67,7 +66,7 @@ const outline = disabled => css`
 
   &:hover {
     border: ${BW_1} solid transparent;
-    color: ${disabled ? WHITE : WHITE};
+    color: ${WHITE};
   }
 `;
 
