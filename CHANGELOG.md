@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.6.1 - 2018-11-16
+### Fixed
+- Modal component setting
+
 ## 0.6.0 - 2018-11-16
 ### Added
 - Flex, Button, and Modal components
