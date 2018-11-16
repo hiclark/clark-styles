@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.6.0 - 2018-11-16
+### Added
+- Flex, Button, and Modal components
+
+### Changed
+- Refactored components and based styles
+
 ## 0.5.0 - 2018-11-15
 ### Added
 - verticalMargin, marginTop, marginBottom flags to Grid
