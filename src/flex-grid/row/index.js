@@ -9,7 +9,7 @@ import React, {
 
 import styled from 'styled-components';
 import { identifyFirsts } from './helpers';
-import { GUTTER_SPACING } from '../const';
+import GUTTER_SPACING from '../const';
 
 type AlignmentType =
   | 'flex-start'

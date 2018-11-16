@@ -2,15 +2,15 @@
 
 import { css } from 'styled-components';
 
-const sizes = {
+const SIZES = {
   large: 1280,
   medium: 1024,
   small: 768,
 };
 
-const media = Object.keys(sizes).reduce((acc, label) => {
+const MEDIA = Object.keys(SIZES).reduce((acc, label) => {
   acc[label] = (...args: any[]) => css`
-    @media (min-width: ${sizes[label]}px) {
+    @media (min-width: ${SIZES[label]}px) {
       ${css(...args)};
     }
   `;
@@ -18,4 +18,4 @@ const media = Object.keys(sizes).reduce((acc, label) => {
   return acc;
 }, {});
 
-export default media;
+export default MEDIA;

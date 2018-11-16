@@ -4,7 +4,7 @@ import { type ComponentType } from 'react';
 
 import styled from 'styled-components';
 import media from '../../constants/media-queries';
-import { GUTTER_SPACING } from '../const';
+import GUTTER_SPACING from '../const';
 
 const DOUBLE_GUTTER_SPACING = `calc(2 * ${GUTTER_SPACING})`;
 const QUADRUPLE_GUTTER_SPACING = `calc(4 * ${GUTTER_SPACING})`;
