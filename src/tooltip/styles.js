@@ -103,7 +103,6 @@ export const StyledPopover = styled.span`
   ${COPY};
   ${BR_3};
   ${EASE_IN_OUT_25};
-  ${Z_TOP};
   color: ${GREY_100};
   background-color: ${WHITE};
   padding: ${S_1};
