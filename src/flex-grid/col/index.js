@@ -52,11 +52,11 @@ export const Col: ComponentType<ColPropsType> = styled.div`
     `}
   width: ${({ sm }) => calculateWidth(sm)};
   ${({ smFirst, smOffset }) => calculateMarginLeft(smFirst, smOffset)};
-  ${media.medium`
+  ${media.small`
     width: ${({ md }) => calculateWidth(md)};
     ${({ mdFirst, mdOffset }) => calculateMarginLeft(mdFirst, mdOffset)};
   `};
-  ${media.large`
+  ${media.medium`
     width: ${({ lg }) => calculateWidth(lg)};
     ${({ lgFirst, lgOffset }) => calculateMarginLeft(lgFirst, lgOffset)};
   `};
