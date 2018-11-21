@@ -18,10 +18,10 @@ const { BR_3 } = BORDER_RADIUS;
 const { S_025, S_1, S_2 } = SPACING;
 const { COPY } = LINE_HEIGHT;
 const { EASE_IN_OUT_25 } = TRANSITIONS;
-const { Z_TOP } = Z_INDEX;
+const { Z_TOP, Z_BOTTOM } = Z_INDEX;
 
 const BORDER = `calc(${S_2} - ${S_025})`;
-const WIDTH = '352px';
+const WIDTH = '350px';
 const TRANSPARENT_BORDER = `${BORDER} solid transparent`;
 const WHITE_BORDER = `${BORDER} solid ${WHITE}`;
 const POSITIONING_SPACER = '8px';
@@ -115,6 +115,7 @@ export const StyledPopover = styled.span`
   word-wrap: break-word;
   box-shadow: 0 1px 4px 0 ${GREY_50};
   opacity: ${({ visible }) => (visible ? 1 : 0)};
+  ${({ visible }) => (visible ? Z_TOP : Z_BOTTOM)};
 
   &::before {
     position: absolute;
