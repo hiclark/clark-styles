@@ -13,3 +13,6 @@ export { default as Z_INDEX } from './constants/z-index';
 
 export { default as BreadcrumbsHeader } from './breadcrumbs-header';
 export { Grid, Row, Col } from './flex-grid';
+export { default as Flex } from './flex';
+export { default as Button } from './button';
+export { default as Modal } from './modal';
