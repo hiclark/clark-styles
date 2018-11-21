@@ -16,3 +16,4 @@ export { Grid, Row, Col } from './flex-grid';
 export { default as Flex } from './flex';
 export { default as Button } from './button';
 export { default as Modal } from './modal';
+export { default as ToolTip } from './tooltip';
