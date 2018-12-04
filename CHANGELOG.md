@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.8.0 - 2018-12-4
+### Fixed
+- Grid breakpoint adjustments
+
 ## 0.7.0 - 2018-11-21
 ### Added
 - Tooltip component
