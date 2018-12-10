@@ -1,4 +1,5 @@
 // @flow
+
 export { default as BORDER_RADIUS } from './constants/border-radius';
 export { default as BORDER_WIDTH } from './constants/border-width';
 export { default as COLORS } from './constants/colors';
@@ -17,3 +18,4 @@ export { default as Flex } from './flex';
 export { default as Button } from './button';
 export { default as Modal } from './modal';
 export { default as ToolTip } from './tooltip';
+export { default as Spinner } from './spinner';
