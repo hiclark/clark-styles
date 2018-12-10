@@ -35,12 +35,15 @@ export const Row = ({ children, alignItems, className }: RowPropsType) => {
 
   return (
     <RowStyle alignItems={alignItems} className={className}>
-      {Children.map(children, (c, i) =>
-        cloneElement(c, {
-          smFirst: smFirsts.includes(i),
-          mdFirst: mdFirsts.includes(i),
-          lgFirst: lgFirsts.includes(i),
-        }),
+      {Children.map(
+        children,
+        (c, i) =>
+          c &&
+          cloneElement(c, {
+            smFirst: smFirsts.includes(i),
+            mdFirst: mdFirsts.includes(i),
+            lgFirst: lgFirsts.includes(i),
+          }),
       )}
     </RowStyle>
   );
