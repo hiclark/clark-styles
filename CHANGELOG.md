@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.9.0 - 2018-12-10
+### Fixed
+- cloneElement error when child is null
+
 ## 0.8.0 - 2018-12-4
 ### Fixed
 - Grid breakpoint adjustments
