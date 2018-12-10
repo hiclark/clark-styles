@@ -38,12 +38,13 @@ export const Row = ({ children, alignItems, className }: RowPropsType) => {
       {Children.map(
         children,
         (c, i) =>
-          c &&
-          cloneElement(c, {
-            smFirst: smFirsts.includes(i),
-            mdFirst: mdFirsts.includes(i),
-            lgFirst: lgFirsts.includes(i),
-          }),
+          c
+            ? cloneElement(c, {
+                smFirst: smFirsts.includes(i),
+                mdFirst: mdFirsts.includes(i),
+                lgFirst: lgFirsts.includes(i),
+              })
+            : c,
       )}
     </RowStyle>
   );
