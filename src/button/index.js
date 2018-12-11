@@ -1,4 +1,5 @@
 // @flow
+
 import React, { Component, type Node } from 'react';
 import { type LocationShape } from 'react-router-dom';
 
@@ -14,6 +15,9 @@ import {
   StyledLink,
 } from './styles';
 
+type StyleType = 'dashed' | 'primary' | 'secondary' | 'tertiary';
+type ButtonType = 'button' | 'reset' | 'submit';
+
 type PropsType = {
   children: Node,
   disabled?: boolean,
@@ -21,9 +25,9 @@ type PropsType = {
   margin?: string,
   onClick?: () => void,
   path?: string | LocationShape,
-  variant?: string,
-  styleType?: string,
-  type?: string,
+  dialog: boolean,
+  styleType?: StyleType,
+  type?: ButtonType,
 };
 
 type StateType = {
@@ -31,14 +35,12 @@ type StateType = {
   btnLabel: Node,
 };
 
-const labelMap = {
-  loading: <Spinner size={SPACING.S_2} />,
-  success: <Check />,
-};
+const labelMap = activeState =>
+  activeState === 'loading' ? <Spinner size={SPACING.S_2} /> : <Check />;
 
 const getBtnProps = activeState => ({
   btnState: activeState,
-  btnLabel: labelMap[activeState],
+  btnLabel: labelMap(activeState),
 });
 
 class Button extends Component<PropsType, StateType> {
@@ -48,15 +50,20 @@ class Button extends Component<PropsType, StateType> {
     margin: null,
     onClick: () => {},
     path: null,
-    variant: null,
+    dialog: null,
     styleType: 'primary',
     type: 'submit',
   };
 
   state = {
     btnState: 'active',
-    btnLabel: this.props.children,
+    btnLabel: null,
   };
+
+  componentDidMount() {
+    const { children } = this.props;
+    this.setState({ btnLabel: children });
+  }
 
   componentWillUpdate(_, nextState) {
     if (nextState.btnState === 'loading') {
@@ -67,9 +74,9 @@ class Button extends Component<PropsType, StateType> {
   }
 
   handleClick = () => {
-    const { onClick, variant } = this.props;
+    const { onClick, dialog } = this.props;
 
-    if (variant === 'dialog') {
+    if (dialog) {
       const nextBtnState = getBtnProps('loading');
       this.setState({ ...nextBtnState }, () => {
         if (onClick) onClick();
@@ -85,7 +92,7 @@ class Button extends Component<PropsType, StateType> {
       path,
       styleType,
       type,
-      variant,
+      dialog,
     } = this.props;
     const { btnLabel, btnState } = this.state;
 
@@ -98,10 +105,10 @@ class Button extends Component<PropsType, StateType> {
             margin={margin}
             styleType={styleType}
             to={path}
-            variant={variant}
+            dialog={dialog}
           >
             {icon && (
-              <SecondaryIcon btnState={btnState} variant={variant}>
+              <SecondaryIcon btnState={btnState} dialog={dialog}>
                 {icon}
               </SecondaryIcon>
             )}
@@ -116,10 +123,10 @@ class Button extends Component<PropsType, StateType> {
             onClick={this.handleClick}
             styleType={styleType}
             type={type}
-            variant={variant}
+            dialog={dialog}
           >
             {icon && (
-              <SecondaryIcon btnState={btnState} variant={variant}>
+              <SecondaryIcon btnState={btnState} dialog={dialog}>
                 {icon}
               </SecondaryIcon>
             )}

@@ -11,40 +11,56 @@ import TYPE_SCALE from '../constants/type-scale';
 import FONT_WEIGHT from '../constants/font-weight';
 import Z_INDEX from '../constants/z-index';
 
+const {
+  CLARK_PRIMARY,
+  CLARK_SECONDARY,
+  GREY_10,
+  GREY_25,
+  GREY_75,
+  WHITE,
+} = COLORS;
+const { TS_6 } = TYPE_SCALE;
+const { BW_1 } = BORDER_WIDTH;
+const { FW_400, FW_700 } = FONT_WEIGHT;
+const { BR_2 } = BORDER_RADIUS;
+const { S_1 } = SPACING;
+const { Z_0 } = Z_INDEX;
+
+const BUTTON_COLOR_TERTIARY = '#c43d00';
 const ICON_SIZE = '1.25rem';
 
+const borderStyle = type => `${BW_1} ${type}`;
+const borderColor = (disabled, type) => `${borderStyle(type)} ${disabled ? GREY_10 : GREY_25}`;
+const borderColorHover = (disabled, type) => `${borderStyle(type)} ${disabled ? GREY_10 : CLARK_SECONDARY}`;
+
 export const Container = styled.span`
-  z-index: 0;
+  ${Z_0};
   position: relative;
   width: 100%;
 `;
 
 const primary = disabled => css`
-  background: ${disabled ? COLORS.GREY_25 : COLORS.CLARK_PRIMARY};
+  background: ${disabled ? GREY_25 : CLARK_PRIMARY};
   border: 0;
-  color: ${COLORS.WHITE};
+  color: ${WHITE};
   &:hover {
-    background: ${disabled ? COLORS.GREY_25 : COLORS.BUTTON_COLOR_TERTIARY};
+    background: ${disabled ? GREY_25 : BUTTON_COLOR_TERTIARY};
   }
 `;
 
 const secondary = disabled => css`
-  background: ${COLORS.WHITE};
-  border: ${disabled
-    ? `${BORDER_WIDTH.BW_1} solid ${COLORS.GREY_10}`
-    : `${BORDER_WIDTH.BW_1} solid ${COLORS.GREY_25}`};
-  color: ${disabled ? COLORS.GREY_25 : COLORS.GREY_75};
+  background: ${WHITE};
+  border: ${borderColor(disabled, 'solid')};
+  color: ${disabled ? GREY_25 : GREY_75};
   &:hover {
-    border: ${disabled
-      ? `${BORDER_WIDTH.BW_1} solid ${COLORS.GREY_10}`
-      : `${BORDER_WIDTH.BW_1} solid ${COLORS.CLARK_SECONDARY}`};
-    color: ${disabled ? COLORS.GREY_25 : COLORS.GREY_75};
+    border: ${borderColorHover(disabled, 'solid')};
+    color: ${disabled ? GREY_25 : GREY_75};
   }
 `;
 
 const tertiary = css`
-  ${FONT_WEIGHT.FW_400};
-  color: ${COLORS.CLARK_SECONDARY};
+  ${FW_400};
+  color: ${CLARK_SECONDARY};
   text-transform: capitalize;
   padding: 0;
   border: 0;
@@ -54,16 +70,12 @@ const tertiary = css`
 `;
 
 const dashed = disabled => css`
-  background: ${COLORS.WHITE};
-  border: ${disabled
-    ? `${BORDER_WIDTH.BW_1} dashed ${COLORS.GREY_10}`
-    : `${BORDER_WIDTH.BW_1} dashed ${COLORS.GREY_25}`};
-  color: ${disabled ? COLORS.GREY_10 : COLORS.GREY_75};
+  background: ${WHITE};
+  border: ${borderColor(disabled, 'dashed')};
+  color: ${disabled ? GREY_10 : GREY_75};
   &:hover {
-    border: ${disabled
-      ? `${BORDER_WIDTH.BW_1} dashed ${COLORS.GREY_10}`
-      : `${BORDER_WIDTH.BW_1} dashed ${COLORS.CLARK_SECONDARY}`};
-    color: ${disabled ? COLORS.GREY_10 : COLORS.GREY_75};
+    border: ${borderColorHover(disabled, 'dashed')};
+    color: ${disabled ? GREY_10 : GREY_75};
   }
 `;
 
@@ -75,16 +87,15 @@ const buttonStyleType = disabled => ({
 });
 
 export const StyledButton = styled.button`
-  ${FONT_WEIGHT.FW_700};
-  ${TYPE_SCALE.TS_6};
-  ${BORDER_RADIUS.BR_2};
+  ${FW_700};
+  ${TS_6};
+  ${BR_2};
   ${Z_INDEX.Z_1};
-  padding: ${SPACING.S_1};
+  padding: ${S_1};
   margin: ${({ margin }) => margin};
   letter-spacing: 1px;
   width: 100%;
   max-width: 100%;
-  height: auto;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -99,11 +110,11 @@ export const StyledButton = styled.button`
   svg {
     height: ${ICON_SIZE};
     width: ${ICON_SIZE};
-    color: ${({ btnState, styleType, variant }) =>
+    color: ${({ btnState, styleType, dialog }) =>
       styleType !== 'primary' &&
       btnState === 'success' &&
-      variant === 'dialog' &&
-      COLORS.CLARK_SECONDARY};
+      dialog &&
+      CLARK_SECONDARY};
   }
 `;
 
@@ -117,8 +128,12 @@ export const SecondaryIcon = styled.span`
   height: ${ICON_SIZE};
   width: ${ICON_SIZE};
   margin-right: auto;
-  visibility: ${({ btnState, variant }) =>
+  visibility: ${({ btnState, dialog }) =>
     (btnState === 'loading' ||
-      (btnState === 'success' && variant === 'dialog')) &&
+      (btnState === 'success' && dialog)) &&
     'hidden'};
+  margin-left: ${({ btnState, dialog }) =>
+    (btnState === 'loading' ||
+      (btnState === 'success' && dialog)) &&
+    `-${ICON_SIZE}`};
 `;

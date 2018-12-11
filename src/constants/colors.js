@@ -13,8 +13,6 @@ const GREY_3 = '#F9F9FA';
 
 const WHITE = '#ffffff';
 
-const BUTTON_COLOR_TERTIARY = '#c43d00';
-
 const COLORS = {
   CLARK_PRIMARY,
   CLARK_SECONDARY,
@@ -26,7 +24,6 @@ const COLORS = {
   GREY_10,
   GREY_3,
   WHITE,
-  BUTTON_COLOR_TERTIARY,
 };
 
 export default COLORS;
