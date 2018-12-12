@@ -23,15 +23,15 @@ const { TS_6 } = TYPE_SCALE;
 const { BW_1 } = BORDER_WIDTH;
 const { FW_400, FW_700 } = FONT_WEIGHT;
 const { BR_2 } = BORDER_RADIUS;
-const { S_1 } = SPACING;
+const { S_1, S_2 } = SPACING;
 const { Z_0 } = Z_INDEX;
 
 const BUTTON_COLOR_TERTIARY = '#c43d00';
 const ICON_SIZE = '1.25rem';
+const PADDING = '1.6rem';
 
-const borderStyle = type => `${BW_1} ${type}`;
-const borderColor = (disabled, type) => `${borderStyle(type)} ${disabled ? GREY_10 : GREY_25}`;
-const borderColorHover = (disabled, type) => `${borderStyle(type)} ${disabled ? GREY_10 : CLARK_SECONDARY}`;
+const borderColor = (disabled, type) => `${BW_1} ${type} ${disabled ? GREY_10 : GREY_25}`;
+const borderColorHover = (disabled, type) => `${BW_1} ${type} ${disabled ? GREY_10 : CLARK_SECONDARY}`;
 
 export const Container = styled.span`
   ${Z_0};
@@ -39,16 +39,17 @@ export const Container = styled.span`
   width: 100%;
 `;
 
-const primary = disabled => css`
+const solid = disabled => css`
   background: ${disabled ? GREY_25 : CLARK_PRIMARY};
   border: 0;
   color: ${WHITE};
+
   &:hover {
     background: ${disabled ? GREY_25 : BUTTON_COLOR_TERTIARY};
   }
 `;
 
-const secondary = disabled => css`
+const outline = disabled => css`
   background: ${WHITE};
   border: ${borderColor(disabled, 'solid')};
   color: ${disabled ? GREY_25 : GREY_75};
@@ -58,7 +59,7 @@ const secondary = disabled => css`
   }
 `;
 
-const tertiary = css`
+const link = css`
   ${FW_400};
   color: ${CLARK_SECONDARY};
   text-transform: capitalize;
@@ -79,11 +80,11 @@ const dashed = disabled => css`
   }
 `;
 
-const buttonStyleType = disabled => ({
-  primary: () => primary(disabled),
-  secondary: () => secondary(disabled),
+const variant = disabled => ({
+  solid: () => solid(disabled),
+  outline: () => outline(disabled),
   dashed: () => dashed(disabled),
-  tertiary,
+  link,
 });
 
 export const StyledButton = styled.button`
@@ -91,8 +92,9 @@ export const StyledButton = styled.button`
   ${TS_6};
   ${BR_2};
   ${Z_INDEX.Z_1};
-  padding: ${S_1};
+  padding: ${PADDING} ${S_2};
   margin: ${({ margin }) => margin};
+  pointer-events: ${({ disabled }) => disabled && 'none'};
   letter-spacing: 1px;
   width: 100%;
   max-width: 100%;
@@ -102,38 +104,31 @@ export const StyledButton = styled.button`
   align-items: center;
   text-decoration: none;
   text-transform: uppercase;
-  ${({ disabled }) => disabled && 'pointer-events: none;'};
-  ${({ disabled, styleType }) => buttonStyleType(disabled)[styleType]};
+  ${({ disabled, styleType }) => variant(disabled)[styleType]};
   &:focus {
     outline: none;
-  }
-  svg {
-    height: ${ICON_SIZE};
-    width: ${ICON_SIZE};
-    color: ${({ btnState, styleType, dialog }) =>
-      styleType !== 'primary' &&
-      btnState === 'success' &&
-      dialog &&
-      CLARK_SECONDARY};
   }
 `;
 
 export const StyledLink = StyledButton.withComponent(Link);
 
 export const Label = styled.span`
+  position: absolute;
+  margin-left: auto;
+  white-space: nowrap;
   margin-right: ${({ hasSecondaryIcon }) => hasSecondaryIcon && 'auto'};
 `;
 
 export const SecondaryIcon = styled.span`
+  position: absolute;
   height: ${ICON_SIZE};
   width: ${ICON_SIZE};
-  margin-right: auto;
-  visibility: ${({ btnState, dialog }) =>
-    (btnState === 'loading' ||
-      (btnState === 'success' && dialog)) &&
-    'hidden'};
-  margin-left: ${({ btnState, dialog }) =>
-    (btnState === 'loading' ||
-      (btnState === 'success' && dialog)) &&
-    `-${ICON_SIZE}`};
+  left: ${S_1};
+  display: ${({ hide }) => hide && 'none'};
+`;
+
+export const Icon = styled.span`
+  height: ${ICON_SIZE};
+  width: ${ICON_SIZE};
+  color: ${({ outlineSuccess }) => outlineSuccess && CLARK_SECONDARY};
 `;

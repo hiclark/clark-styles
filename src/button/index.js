@@ -1,100 +1,92 @@
 // @flow
 
-import React, { Component, type Node } from 'react';
-import { type LocationShape } from 'react-router-dom';
+import React, { Component, Fragment, type Element, type Node } from 'react';
+import { Link, type LocationShape } from 'react-router-dom';
 
 import Spinner from '../spinner';
-import SPACING from '../constants/spacing';
 import Check from '../assets/icons/check.svg';
 
 import {
   Container,
+  Icon,
   Label,
   SecondaryIcon,
   StyledButton,
   StyledLink,
 } from './styles';
 
-type StyleType = 'dashed' | 'primary' | 'secondary' | 'tertiary';
+type StyleType = 'dashed' | 'solid' | 'outline' | 'link';
+type BtnStateType = 'active' | 'loading' | 'success';
 type ButtonType = 'button' | 'reset' | 'submit';
 
 type PropsType = {
   children: Node,
+  isConfirmation?: boolean,
   disabled?: boolean,
-  icon?: Node,
+  icon?: Element<'svg'>,
+  isLoading?: boolean,
   margin?: string,
   onClick?: () => void,
   path?: string | LocationShape,
-  dialog: boolean,
+  isConfirmation: boolean,
   styleType?: StyleType,
   type?: ButtonType,
 };
 
 type StateType = {
-  btnState: string,
-  btnLabel: Node,
+  btnState: BtnStateType,
 };
 
-const labelMap = activeState =>
-  activeState === 'loading' ? <Spinner size={SPACING.S_2} /> : <Check />;
-
-const getBtnProps = activeState => ({
-  btnState: activeState,
-  btnLabel: labelMap(activeState),
+const ICON_SIZE = '24px';
+const iconMap = label => ({
+  active: label,
+  loading: <Spinner size={ICON_SIZE} />,
+  success: <Check />,
 });
 
+const ButtonLabel = ({ btnState, label, icon, isLoading, styleType }) => (
+  <Fragment>
+    {icon && (
+      <SecondaryIcon hide={['loading', 'success'].includes(btnState) || isLoading}>
+        {icon}
+      </SecondaryIcon>
+    )}
+    <Label hasSecondaryIcon={icon}>
+      <Icon outlineSuccess={styleType === 'outline' && btnState === 'success'}>
+        {isLoading ? <Spinner size={ICON_SIZE} /> : iconMap(label)[btnState]}
+      </Icon>
+    </Label>
+  </Fragment>
+);
+
 class Button extends Component<PropsType, StateType> {
-  static defaultProps = {
-    disabled: false,
-    icon: null,
-    margin: null,
-    onClick: () => {},
-    path: null,
-    dialog: null,
-    styleType: 'primary',
-    type: 'submit',
-  };
+  state = { btnState: 'active' };
 
-  state = {
-    btnState: 'active',
-    btnLabel: null,
-  };
-
-  componentDidMount() {
-    const { children } = this.props;
-    this.setState({ btnLabel: children });
-  }
-
-  componentWillUpdate(_, nextState) {
-    if (nextState.btnState === 'loading') {
-      const nextBtnState = getBtnProps('success');
-
-      setTimeout(() => this.setState({ ...nextBtnState }), 1000);
-    }
-  }
+  delay = () => setTimeout(() => this.setState({ btnState: 'success' }), 1000);
 
   handleClick = () => {
-    const { onClick, dialog } = this.props;
+    const { onClick, isConfirmation } = this.props;
 
-    if (dialog) {
-      const nextBtnState = getBtnProps('loading');
-      this.setState({ ...nextBtnState }, () => {
-        if (onClick) onClick();
-      });
+    if (isConfirmation) {
+      this.setState({ btnState: 'loading' }, () => this.delay());
     }
+
+    if (onClick) onClick();
   };
 
   render() {
+    const { btnState } = this.state;
     const {
+      children,
       disabled,
       icon,
+      isConfirmation,
+      isLoading,
       margin,
       path,
       styleType,
       type,
-      dialog,
     } = this.props;
-    const { btnLabel, btnState } = this.state;
 
     return (
       <Container>
@@ -103,34 +95,36 @@ class Button extends Component<PropsType, StateType> {
             disabled={disabled}
             icon={icon}
             margin={margin}
-            styleType={styleType}
+            styleType={styleType || 'solid'}
             to={path}
-            dialog={dialog}
+            isConfirmation={isConfirmation}
           >
-            {icon && (
-              <SecondaryIcon btnState={btnState} dialog={dialog}>
-                {icon}
-              </SecondaryIcon>
-            )}
-            <Label hasSecondaryIcon={icon}>{btnLabel}</Label>
+            <ButtonLabel
+              btnState={btnState}
+              label={children}
+              icon={icon}
+              isLoading={isLoading}
+              styleType={styleType}
+            />
           </StyledLink>
         ) : (
           <StyledButton
             btnState={btnState}
-            disabled={btnState === 'loading' || disabled}
+            disabled={btnState === 'loading' || isLoading || disabled}
             icon={icon}
+            isConfirmation={isConfirmation}
             margin={margin}
             onClick={this.handleClick}
-            styleType={styleType}
+            styleType={styleType || 'solid'}
             type={type}
-            dialog={dialog}
           >
-            {icon && (
-              <SecondaryIcon btnState={btnState} dialog={dialog}>
-                {icon}
-              </SecondaryIcon>
-            )}
-            <Label hasSecondaryIcon={icon}>{btnLabel}</Label>
+            <ButtonLabel
+              btnState={btnState}
+              label={children}
+              icon={icon}
+              isLoading={isLoading}
+              styleType={styleType}
+            />
           </StyledButton>
         )}
       </Container>
