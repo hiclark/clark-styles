@@ -18,7 +18,7 @@
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
-    "lint": "NODE_ENV=development eslint src/",
+    "lint": "eslint src/",
     "lint:fix": "yarn run lint --fix",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
