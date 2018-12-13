@@ -14,8 +14,8 @@ jobs:
           paths:
             - .cache/yarn
       - run:
-          name: Run ESlint && Prettier
-          command: yarn run lint && yarn run prettify
+          name: Run ESlint
+          command: yarn run lint
       - run:
           name: Run Flow && Jest tests
           command: yarn run flow && yarn test
