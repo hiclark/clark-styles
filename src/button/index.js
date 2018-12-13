@@ -52,7 +52,7 @@ const ButtonLabel = ({ btnState, label, icon, isLoading, styleType }) => (
       </SecondaryIcon>
     )}
     <Label hasSecondaryIcon={icon}>
-      <Icon outlineSuccess={styleType === 'outline' && btnState === 'success'}>
+      <Icon underline={styleType === 'link'} outlineSuccess={styleType === 'outline' && btnState === 'success'}>
         {isLoading ? <Spinner size={ICON_SIZE} /> : iconMap(label)[btnState]}
       </Icon>
     </Label>

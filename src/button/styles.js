@@ -65,9 +65,6 @@ const link = css`
   text-transform: capitalize;
   padding: 0;
   border: 0;
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 const dashed = disabled => css`
@@ -131,4 +128,7 @@ export const Icon = styled.span`
   height: ${ICON_SIZE};
   width: ${ICON_SIZE};
   color: ${({ outlineSuccess }) => outlineSuccess && CLARK_SECONDARY};
+  &:hover {
+    text-decoration: ${({ underline }) => underline && 'underline'};
+  };
 `;
