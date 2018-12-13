@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/clark-styles
+    docker:
+      - image: circleci/node:9.2
+    steps:
+      - checkout
+      - run:
+          name: Install node_modules
+          command: yarn
+      - save_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - .cache/yarn
+      - run:
+          name: Run ESlint && Prettier && StyleLint
+          command: yarn run lint:prod && yarn run prettify && yarn run lint:css
+      - run:
+          name: Run Flow && Jest tests
+          command: yarn run flow && yarn test
+
+workflows:
+   version: 2
+   build-and-deploy:
+     jobs:
+       - build
