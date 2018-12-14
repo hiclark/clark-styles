@@ -9,7 +9,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
-    "node": ">=8",
+    "node": ">=9.10",
     "npm": ">=5"
   },
   "scripts": {
@@ -18,7 +18,7 @@
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
-    "lint": "NODE_ENV=development eslint src/",
+    "lint": "eslint src/",
     "lint:fix": "yarn run lint --fix",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
@@ -58,7 +58,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
-    "flow-bin": "^0.85.0",
+    "flow-bin": "0.84.0",
     "flow-typed": "^2.5.1",
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.3",

@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/clark-styles
     docker:
-      - image: circleci/node:9.2
+      - image: circleci/node:9.10
     steps:
       - checkout
       - run:
@@ -14,8 +14,8 @@ jobs:
           paths:
             - .cache/yarn
       - run:
-          name: Run ESlint && Prettier
-          command: yarn run lint:prod && yarn run prettify
+          name: Run ESlint
+          command: yarn run lint
       - run:
           name: Run Flow && Jest tests
           command: yarn run flow && yarn test
