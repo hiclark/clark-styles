@@ -1,9 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.11.0 - 2019-02-20
+### Fixed
+- Modal to check for presence of document for webpack HTML Builds
+- https://www.gatsbyjs.org/docs/debugging-html-builds/
+
 ## 0.10.0 - 2018-12-10
 ### Added
 - Spinner component
+
 ## 0.9.0 - 2018-12-10
 ### Fixed
 - cloneElement error when child is null
