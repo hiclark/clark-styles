@@ -1,13 +1,23 @@
 // @flow
 
 import styled from 'styled-components';
-import { Grid, COLORS, FONT_WEIGHT, SPACING, TYPE_SCALE, LINE_HEIGHT } from 'clark-styles';
+
+import { Grid } from '../flex-grid';
+import TYPE_SCALE from '../constants/type-scale';
+import COLORS from '../constants/colors';
+import FONT_WEIGHT from '../constants/font-weight';
+import SPACING from '../constants/spacing';
+import LINE_HEIGHT from '../constants/line-height';
+import BOX_SHADOW from '../constants/box-shadow';
+import LETTER_SPACING from '../constants/letter-spacing';
 
 const { S_2, S_4 } = SPACING;
 const { CLARK_SECONDARY, WHITE } = COLORS;
 const { TS_3, TS_6 } = TYPE_SCALE;
 const { FW_100, FW_400 } = FONT_WEIGHT;
 const { COPY } = LINE_HEIGHT;
+const { BS_LARGE } = BOX_SHADOW;
+const { LS_2_5 } = LETTER_SPACING;
 
 export const Container = styled.div`
   background-color: ${CLARK_SECONDARY};
@@ -57,15 +67,15 @@ export const Attribution = styled.span`
   ${FW_400};
   ${TS_6};
   ${COPY};
+  ${LS_2_5};
   display: block;
-  letter-spacing: 2.5px;
   margin-left: ${S_4};
   position: relative;
   text-transform: uppercase;
 `;
 
 export const Image = styled.img`
-  box-shadow: 15px 30px 30px -20px rgba(0, 0, 0, 0.2);
+  ${BS_LARGE};
   display: block;
   margin-top: ${S_2};
   position: absolute;

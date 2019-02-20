@@ -1,8 +1,15 @@
 // @flow
 
 import React from 'react';
-import { Row, Col } from 'clark-styles';
-import { Container, GridWrapper, Quote, Emphasis, Attribution, Image } from './styles';
+import { Row, Col } from '../flex-grid';
+import {
+  Container,
+  GridWrapper,
+  Quote,
+  Emphasis,
+  Attribution,
+  Image,
+} from './styles';
 
 export type PropsType = {
   firstSection: string,
