@@ -28,7 +28,7 @@
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "styled-components": "2.x - 3.x"
+    "styled-components": "2.x - 4.x"
   },
   "dependencies": {
     "lodash": "^4.17.11",

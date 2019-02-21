@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.12.0 - 2019-02-20
+### Added
+- Blockquote component
+- Box shadow constants
+- Letter spacing constants
+- Extended peerDependencies range for styled-components
+
 ## 0.11.0 - 2019-02-20
 ### Fixed
 - Modal to check for presence of document for webpack HTML Builds
