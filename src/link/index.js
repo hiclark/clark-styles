@@ -1,18 +1,18 @@
 // @flow
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import StyledLink from './styles';
 
-const LinkComponent = (props: any) => {
-  const { children, path } = props;
-  return <StyledLink to={path}>{children}</StyledLink>;
+type PropsType = {
+  children: any,
+  margin: string,
+  path: string,
 };
 
-export default LinkComponent;
+const LinkComponent = ({ children, margin, path }: PropsType) => (
+  <StyledLink margin={margin} to={path}>
+    {children}
+  </StyledLink>
+);
 
-export const StyledLink = styled(Link)`
-  color: green;
-  margin: 12px;
-  border: 1px solid red;
-`;
+export default LinkComponent;

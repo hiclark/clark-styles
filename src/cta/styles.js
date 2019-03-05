@@ -73,6 +73,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  text-transform: uppercase;
 
   ${({ disabled, variant }) => buttonVariant(disabled)[variant]};
 `;
