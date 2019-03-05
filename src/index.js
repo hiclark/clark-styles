@@ -18,6 +18,8 @@ export { default as BreadcrumbsHeader } from './breadcrumbs-header';
 export { Grid, Row, Col } from './flex-grid';
 export { default as Flex } from './flex';
 export { default as Button } from './button';
+export { default as Cta } from './cta';
+export { default as Link } from './link';
 export { default as Modal } from './modal';
 export { default as ToolTip } from './tooltip';
 export { default as Spinner } from './spinner';
