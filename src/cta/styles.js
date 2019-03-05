@@ -9,14 +9,13 @@ import COLORS from '../constants/colors';
 import FONT_WEIGHT from '../constants/font-weight';
 import SPACING from '../constants/spacing';
 import Z_INDEX from '../constants/z-index';
-// import MEDIA from '../constants/media-queries';
 
 const { CLARK_PRIMARY, CLARK_SECONDARY, GREY_75, GREY_25, WHITE } = COLORS;
 const { TS_6 } = TYPE_SCALE;
 const { BW_1 } = BORDER_WIDTH;
 const { FW_700 } = FONT_WEIGHT;
 const { BR_2 } = BORDER_RADIUS;
-const { S_1, S_2 } = SPACING;
+const { S_1 } = SPACING;
 const { Z_1 } = Z_INDEX;
 
 const DARK_ORANGE = '#C43D00';
@@ -63,7 +62,7 @@ export const StyledButton = styled.button`
   ${Z_1};
   ${FW_700};
   ${({ disabled }) => disabled && 'pointer-events: none;'};
-  padding: ${S_1} ${S_2};
+  padding: 0 ${S_1};
   margin: ${({ margin }) => margin};
   color: ${WHITE};
   width: 100%;
@@ -88,6 +87,10 @@ export const Middle = styled.div`
   flex: 2;
 `;
 
-export const Right = styled.div`
+export const Spacer = styled.div`
   flex: 1;
+`;
+
+export const Icon = styled.span`
+  color: ${({ isOutline }) => isOutline && CLARK_SECONDARY};
 `;

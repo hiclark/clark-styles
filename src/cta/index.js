@@ -1,20 +1,21 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Left, Middle, Right, StyledButton } from './styles';
+import { Icon, Left, Middle, Spacer, StyledButton } from './styles';
+import SPACING from '../constants/spacing';
 import Check from '../assets/icons/check.svg';
 import Spinner from '../spinner';
 
-const ICON_SIZE = '24px';
+const { S_05, S_1 } = SPACING;
+const ICON_SIZE = `calc(${S_05} + ${S_1})`;
+
 const ICONS = {
   confirmed: <Check />,
   loading: <Spinner size={ICON_SIZE} />,
 };
 
 class Cta extends Component<*, *> {
-  state = {
-    buttonState: 'ready',
-  };
+  state = { buttonState: 'ready' };
 
   setIsSubmitting = () => {
     const { loadingTime } = this.props;
@@ -29,30 +30,39 @@ class Cta extends Component<*, *> {
     });
 
   onClickHandler = () => {
-    const { onClick } = this.props;
-    if (onClick) {
+    const { loadingTime, onClick } = this.props;
+    if (loadingTime) {
       this.setIsLoading();
       return onClick();
     }
 
-    return this.setIsLoading();
+    return onClick();
   };
 
   render() {
     const { buttonState } = this.state;
-    const { children, disabled, secondaryIcon, variant } = this.props;
+    const { children, disabled, margin, secondaryIcon, variant } = this.props;
 
     return (
       <StyledButton
         disabled={disabled || buttonState === 'loading'}
+        margin={margin}
         onClick={this.onClickHandler}
         variant={variant}
       >
         <Left>{secondaryIcon && buttonState === 'ready' && secondaryIcon}</Left>
         <Middle>
-          {buttonState === 'ready' ? children : ICONS[buttonState]}
+          {buttonState === 'ready' ? (
+            children
+          ) : (
+            <Icon
+              isOutline={variant === 'outline' && buttonState === 'confirmed'}
+            >
+              {ICONS[buttonState]}
+            </Icon>
+          )}
         </Middle>
-        <Right />
+        <Spacer />
       </StyledButton>
     );
   }
