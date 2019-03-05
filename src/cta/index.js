@@ -16,27 +16,36 @@ class Cta extends Component<*, *> {
     buttonState: 'ready',
   };
 
-  isSubmitting = () => {
+  setIsSubmitting = () => {
     const { loadingTime } = this.props;
     return setTimeout(() => {
       this.setState({ buttonState: 'confirmed' });
     }, loadingTime);
   };
 
-  onClickHandler = () => {
+  setIsLoading = () =>
     this.setState({ buttonState: 'loading' }, () => {
-      this.isSubmitting();
+      this.setIsSubmitting();
     });
+
+  onClickHandler = () => {
+    const { onClick } = this.props;
+    if (onClick) {
+      this.setIsLoading();
+      return onClick();
+    }
+
+    return this.setIsLoading();
   };
 
   render() {
     const { buttonState } = this.state;
-    const { children, disabled, onClick, secondaryIcon, variant } = this.props;
+    const { children, disabled, secondaryIcon, variant } = this.props;
 
     return (
       <StyledButton
         disabled={disabled || buttonState === 'loading'}
-        onClick={() => {onClick && onClick(); this.onClickHandler()}}
+        onClick={this.onClickHandler}
         variant={variant}
       >
         <Left>{secondaryIcon && buttonState === 'ready' && secondaryIcon}</Left>
