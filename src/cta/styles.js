@@ -19,7 +19,6 @@ const { BR_2 } = BORDER_RADIUS;
 const { S_1, S_2 } = SPACING;
 const { Z_1 } = Z_INDEX;
 
-const MAX_WIDTH = '17.5rem';
 const DARK_ORANGE = '#C43D00';
 
 const solid = disabled => css`
@@ -57,10 +56,6 @@ const buttonVariant = disabled => ({
   outline: () => outline(disabled),
   dashed: () => dashed(disabled),
 });
-
-export const ButtonWrap = styled.div`
-  width: ${MAX_WIDTH};
-`;
 
 export const StyledButton = styled.button`
   ${TS_6};

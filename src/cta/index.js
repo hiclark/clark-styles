@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { ButtonWrap, Left, Middle, Right, StyledButton } from './styles';
+import { Left, Middle, Right, StyledButton } from './styles';
 import Check from '../assets/icons/check.svg';
 import Spinner from '../spinner';
 
@@ -31,23 +31,20 @@ class Cta extends Component<*, *> {
 
   render() {
     const { buttonState } = this.state;
-    const { children, disabled, secondaryIcon, variant } = this.props;
+    const { children, disabled, onClick, secondaryIcon, variant } = this.props;
 
     return (
-      <ButtonWrap onClick={this.onClickHandler}>
-        <StyledButton
-          disabled={disabled || buttonState === 'loading'}
-          variant={variant}
-        >
-          <Left>
-            {secondaryIcon && buttonState === 'ready' && secondaryIcon}
-          </Left>
-          <Middle>
-            {buttonState === 'ready' ? children : ICONS[buttonState]}
-          </Middle>
-          <Right />
-        </StyledButton>
-      </ButtonWrap>
+      <StyledButton
+        disabled={disabled || buttonState === 'loading'}
+        onClick={() => {onClick && onClick(); this.onClickHandler()}}
+        variant={variant}
+      >
+        <Left>{secondaryIcon && buttonState === 'ready' && secondaryIcon}</Left>
+        <Middle>
+          {buttonState === 'ready' ? children : ICONS[buttonState]}
+        </Middle>
+        <Right />
+      </StyledButton>
     );
   }
 }
