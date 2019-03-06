@@ -1,7 +1,7 @@
 // @flow
 
-import React, { Component } from 'react';
-import { Icon, Left, Middle, Spacer, StyledButton } from './styles';
+import React, { Component, type Node } from 'react';
+import { Icon, Left, Label, Spacer, StyledButton } from './styles';
 import SPACING from '../constants/spacing';
 import Check from '../assets/icons/check.svg';
 import Spinner from '../spinner';
@@ -14,25 +14,39 @@ const ICONS = {
   loading: <Spinner size={ICON_SIZE} />,
 };
 
-class Cta extends Component<*, *> {
+type PropsType = {
+  children: Node,
+  disabled: boolean,
+  loadingTime: number,
+  margin: string,
+  onClick(): void,
+  secondaryIcon: Node,
+  variant: string,
+};
+
+type StateType = {
+  buttonState: 'confirmed' | 'loading' | 'ready',
+};
+
+class Cta extends Component<PropsType, StateType> {
   state = { buttonState: 'ready' };
 
-  setIsSubmitting = () => {
+  delayConfirmation = () => {
     const { loadingTime } = this.props;
     return setTimeout(() => {
       this.setState({ buttonState: 'confirmed' });
     }, loadingTime);
   };
 
-  setIsLoading = () =>
+  startLoading = () =>
     this.setState({ buttonState: 'loading' }, () => {
-      this.setIsSubmitting();
+      this.delayConfirmation();
     });
 
   onClickHandler = () => {
     const { loadingTime, onClick } = this.props;
     if (loadingTime) {
-      this.setIsLoading();
+      this.startLoading();
       return onClick();
     }
 
@@ -51,17 +65,19 @@ class Cta extends Component<*, *> {
         variant={variant}
       >
         <Left>{secondaryIcon && buttonState === 'ready' && secondaryIcon}</Left>
-        <Middle>
+        <Label>
           {buttonState === 'ready' ? (
             children
           ) : (
             <Icon
-              isOutline={variant === 'outline' && buttonState === 'confirmed'}
+              clarkSecondary={
+                variant === 'outline' && buttonState === 'confirmed'
+              }
             >
               {ICONS[buttonState]}
             </Icon>
           )}
-        </Middle>
+        </Label>
         <Spacer />
       </StyledButton>
     );

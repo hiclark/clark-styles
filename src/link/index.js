@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react';
+import React, { type Node } from 'react';
 import StyledLink from './styles';
 
 type PropsType = {
-  children: any,
+  children: Node,
   margin: string,
   path: string,
 };

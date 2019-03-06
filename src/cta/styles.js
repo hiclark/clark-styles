@@ -10,30 +10,36 @@ import FONT_WEIGHT from '../constants/font-weight';
 import SPACING from '../constants/spacing';
 import Z_INDEX from '../constants/z-index';
 
-const { CLARK_PRIMARY, CLARK_SECONDARY, GREY_75, GREY_25, WHITE } = COLORS;
+const {
+  CLARK_PRIMARY,
+  CLARK_SECONDARY,
+  GREY_100,
+  GREY_75,
+  GREY_25,
+  WHITE,
+} = COLORS;
 const { TS_6 } = TYPE_SCALE;
 const { BW_1 } = BORDER_WIDTH;
 const { FW_700 } = FONT_WEIGHT;
 const { BR_2 } = BORDER_RADIUS;
 const { S_1 } = SPACING;
 const { Z_1 } = Z_INDEX;
-
 const DARK_ORANGE = '#C43D00';
 
 const solid = disabled => css`
   background-color: ${disabled ? GREY_25 : CLARK_PRIMARY};
-  border: ${BW_1} solid ${disabled ? GREY_25 : CLARK_PRIMARY};
+  border: ${BW_1} ${disabled ? GREY_25 : CLARK_PRIMARY};
 
   &:hover {
     background-color: ${disabled ? GREY_25 : DARK_ORANGE};
-    border: ${BW_1} solid ${disabled ? GREY_25 : DARK_ORANGE};
+    border: ${BW_1} ${disabled ? GREY_25 : DARK_ORANGE};
   }
 `;
 
 const outline = disabled => css`
   background-color: ${WHITE};
   border: ${BW_1} solid ${disabled ? GREY_25 : GREY_75};
-  color: ${disabled ? GREY_25 : GREY_75};
+  color: ${disabled ? GREY_25 : GREY_100};
 
   &:hover {
     border: ${BW_1} solid ${disabled ? GREY_25 : CLARK_SECONDARY};
@@ -43,7 +49,7 @@ const outline = disabled => css`
 const dashed = disabled => css`
   background-color: ${WHITE};
   border: ${BW_1} dashed ${disabled ? GREY_25 : GREY_75};
-  color: ${disabled ? GREY_25 : GREY_75};
+  color: ${disabled ? GREY_25 : GREY_100};
 
   &:hover {
     border: ${BW_1} dashed ${disabled ? GREY_25 : CLARK_SECONDARY};
@@ -84,7 +90,7 @@ export const Left = styled.div`
   flex: 1;
 `;
 
-export const Middle = styled.div`
+export const Label = styled.div`
   flex: 2;
 `;
 
@@ -93,5 +99,5 @@ export const Spacer = styled.div`
 `;
 
 export const Icon = styled.span`
-  color: ${({ isOutline }) => isOutline && CLARK_SECONDARY};
+  color: ${({ clarkSecondary }) => clarkSecondary && CLARK_SECONDARY};
 `;
