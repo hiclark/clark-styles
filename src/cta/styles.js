@@ -99,5 +99,6 @@ export const Spacer = styled.div`
 `;
 
 export const Icon = styled.span`
-  color: ${({ clarkSecondary }) => clarkSecondary && CLARK_SECONDARY};
+  color: ${({ renderClarkSecondaryIcon }) =>
+    renderClarkSecondaryIcon && CLARK_SECONDARY};
 `;

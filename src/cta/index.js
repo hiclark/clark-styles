@@ -16,12 +16,13 @@ const ICONS = {
 
 type PropsType = {
   children: Node,
-  disabled: boolean,
-  loadingTime: number,
-  margin: string,
+  disabled?: boolean,
+  loadingTime?: number,
+  margin?: string,
   onClick(): void,
-  secondaryIcon: Node,
-  variant: string,
+  secondaryIcon?: Node,
+  type?: string,
+  variant?: string,
 };
 
 type StateType = {
@@ -55,22 +56,30 @@ class Cta extends Component<PropsType, StateType> {
 
   render() {
     const { buttonState } = this.state;
-    const { children, disabled, margin, secondaryIcon, variant } = this.props;
+    const {
+      children,
+      disabled,
+      margin,
+      secondaryIcon,
+      type = 'submit',
+      variant = 'solid',
+    } = this.props;
 
     return (
       <StyledButton
         disabled={disabled || buttonState === 'loading'}
         margin={margin}
         onClick={this.onClickHandler}
+        type={type}
         variant={variant}
       >
-        <Left>{secondaryIcon && buttonState === 'ready' && secondaryIcon}</Left>
+        <Left>{buttonState === 'ready' && secondaryIcon}</Left>
         <Label>
           {buttonState === 'ready' ? (
             children
           ) : (
             <Icon
-              clarkSecondary={
+              renderClarkSecondaryIcon={
                 variant === 'outline' && buttonState === 'confirmed'
               }
             >

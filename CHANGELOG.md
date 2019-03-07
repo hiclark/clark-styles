@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.13.0 - 2019-03-07
+### Added
+- Cta component with loading capabilities
+- Link component
+
 ## 0.12.0 - 2019-02-20
 ### Added
 - Blockquote component
