@@ -23,6 +23,7 @@ type PropsType = {
   secondaryIcon?: Node,
   type?: string,
   variant?: string,
+  className?: string,
 };
 
 type StateType = {
@@ -63,17 +64,21 @@ class Cta extends Component<PropsType, StateType> {
       secondaryIcon,
       type = 'submit',
       variant = 'solid',
+      className,
     } = this.props;
 
     return (
       <StyledButton
+        className={className}
         disabled={disabled || buttonState === 'loading'}
         margin={margin}
         onClick={this.onClickHandler}
         type={type}
         variant={variant}
       >
-        <Left>{buttonState === 'ready' && secondaryIcon}</Left>
+        <Left className={className}>
+          {buttonState === 'ready' && secondaryIcon}
+        </Left>
         <Label>
           {buttonState === 'ready' ? (
             children
@@ -87,7 +92,7 @@ class Cta extends Component<PropsType, StateType> {
             </Icon>
           )}
         </Label>
-        <Spacer />
+        <Spacer className={className} />
       </StyledButton>
     );
   }
