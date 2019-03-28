@@ -11,7 +11,9 @@ const GREY_25 = '#cfcfd7';
 const GREY_10 = '#ecebef';
 const GREY_3 = '#F9F9FA';
 
+const PURPLE = '#666298';
 const WHITE = '#ffffff';
+const YELLOW = '#feaf38';
 
 const COLORS = {
   CLARK_PRIMARY,
@@ -23,7 +25,9 @@ const COLORS = {
   GREY_25,
   GREY_10,
   GREY_3,
+  PURPLE,
   WHITE,
+  YELLOW,
 };
 
 export default COLORS;
