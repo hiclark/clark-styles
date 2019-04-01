@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.15.0 - 2019-03-28
+### Added
+- transparent color: `TRANSPARENT`
+- font weight 600: `FW_600`
+- letter spacing .5px: `LS_05`
+- added `className` prop to `Cta` to allow for extension
+
 ## 0.14.0 - 2019-03-28
 ### Added
 - Purple and yellow color constants
