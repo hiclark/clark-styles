@@ -4,6 +4,8 @@ const CLARK_PRIMARY = '#ea4900';
 const CLARK_SECONDARY = '#00cbc4';
 const CLARK_TERTIARY = '#feaf38';
 
+const TRANSPARENT = 'transparent';
+
 const GREY_100 = '#413e60';
 const GREY_75 = '#716f88';
 const GREY_50 = '#a09eaf';
@@ -19,6 +21,7 @@ const COLORS = {
   CLARK_PRIMARY,
   CLARK_SECONDARY,
   CLARK_TERTIARY,
+  TRANSPARENT,
   GREY_100,
   GREY_75,
   GREY_50,
