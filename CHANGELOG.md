@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.14.0 - 2019-03-28
+### Added
+- Purple and yellow color constants
+
 ## 0.13.0 - 2019-03-07
 ### Added
 - Cta component with loading capabilities
@@ -62,7 +66,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Readme
 - Constant styles naming
-  
+
 ### Fixed
 - Type scale contant export
 
@@ -82,4 +86,3 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial release of library
 - Colors, Spacing, Grid
-
