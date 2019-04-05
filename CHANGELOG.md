@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.16.0 - 2019-04-05
+### Added
+- spacing: 1.5rem `S_1_5` // 24px
+
 ## 0.15.0 - 2019-03-28
 ### Added
 - transparent color: `TRANSPARENT`
