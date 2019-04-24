@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.17.0 - 2019-04-24
+### Added
+- header: adds `<Header />` to be used across apps
+- cta: adds `controlledLoading` prop to cta
+
 ## 0.16.0 - 2019-04-05
 ### Added
 - spacing: 1.5rem `S_1_5` // 24px

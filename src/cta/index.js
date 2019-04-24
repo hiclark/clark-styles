@@ -47,6 +47,7 @@ class Cta extends Component<PropsType, StateType> {
       this.delayConfirmation();
     });
 
+  // eslint-disable-next-line consistent-return
   onClickHandler = () => {
     const { loadingTime, onClick } = this.props;
     if (loadingTime) {
@@ -89,14 +90,14 @@ class Cta extends Component<PropsType, StateType> {
           ) : buttonState === 'ready' ? (
             children
           ) : (
-            <Icon
-              renderClarkSecondaryIcon={
-                variant === 'outline' && buttonState === 'confirmed'
-              }
-            >
-              {ICONS[buttonState]}
-            </Icon>
-          )}
+                <Icon
+                  renderClarkSecondaryIcon={
+                    variant === 'outline' && buttonState === 'confirmed'
+                  }
+                >
+                  {ICONS[buttonState]}
+                </Icon>
+              )}
         </Label>
         <Spacer className={className} />
       </StyledButton>
