@@ -90,14 +90,14 @@ class Cta extends Component<PropsType, StateType> {
           ) : buttonState === 'ready' ? (
             children
           ) : (
-                <Icon
-                  renderClarkSecondaryIcon={
-                    variant === 'outline' && buttonState === 'confirmed'
-                  }
-                >
-                  {ICONS[buttonState]}
-                </Icon>
-              )}
+            <Icon
+              renderClarkSecondaryIcon={
+                variant === 'outline' && buttonState === 'confirmed'
+              }
+            >
+              {ICONS[buttonState]}
+            </Icon>
+          )}
         </Label>
         <Spacer className={className} />
       </StyledButton>
