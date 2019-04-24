@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.17.1 - 2019-04-24
+### Fixed
+- Release issue with 0.17.0
+
 ## 0.17.0 - 2019-04-24
 ### Added
 - header: adds `<Header />` to be used across apps
