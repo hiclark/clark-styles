@@ -11,7 +11,7 @@ import SPACING from '../constants/spacing';
 import Z_INDEX from '../constants/z-index';
 import MEDIA from '../constants/media-queries';
 
-const { CLARK_PRIMARY, GREY_100, GREY_50, GREY_25, WHITE } = COLORS;
+const { CLARK_PRIMARY, CLARK_SECONDARY, GREY_100, GREY_50, GREY_25, GREY_75, WHITE } = COLORS;
 const { TS_6 } = TYPE_SCALE;
 const { BW_1 } = BORDER_WIDTH;
 const { FW_700 } = FONT_WEIGHT;
@@ -89,10 +89,31 @@ const outlineSecondary = disabled => css`
   }
 `;
 
+const dashed = disabled => css`
+  ${FW_700};
+  background: ${WHITE};
+  border: ${BW_1} dashed ${GREY_50};
+  color: ${GREY_75};
+  cursor: ${disabled ? 'auto' : 'pointer'};
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: ${disabled ? '0.4' : '1'};
+
+  &:hover {
+    background: ${WHITE};
+    border:  ${BW_1} dashed ${disabled ? GREY_25 : CLARK_SECONDARY};
+  }
+
+  &::before {
+    background: transparent;
+  }
+`;
+
 const buttonStyleType = disabled => ({
   solid: () => solid(disabled),
   outline: () => outline(disabled),
   outlineSecondary: () => outlineSecondary(disabled),
+  dashed: () => dashed(disabled),
 });
 
 export const Container = styled.span`
