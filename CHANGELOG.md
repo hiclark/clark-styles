@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.14.1 - 2019-03-28
+### Fixed
+- Modal doesn't setAppElement when server side rendering
+
 ## 0.14.0 - 2019-03-28
 ### Added
 - Purple and yellow color constants
