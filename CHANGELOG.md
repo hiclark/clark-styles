@@ -1,9 +1,29 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 0.14.1 - 2019-03-28
+## 0.17.2 - 2019-05-24
 ### Fixed
 - Modal doesn't setAppElement when server side rendering
+
+## 0.17.1 - 2019-04-24
+### Fixed
+- Release issue with 0.17.0
+
+## 0.17.0 - 2019-04-24
+### Added
+- header: adds `<Header />` to be used across apps
+- cta: adds `controlledLoading` prop to cta
+
+## 0.16.0 - 2019-04-05
+### Added
+- spacing: 1.5rem `S_1_5` // 24px
+
+## 0.15.0 - 2019-03-28
+### Added
+- transparent color: `TRANSPARENT`
+- font weight 600: `FW_600`
+- letter spacing .5px: `LS_05`
+- added `className` prop to `Cta` to allow for extension
 
 ## 0.14.0 - 2019-03-28
 ### Added

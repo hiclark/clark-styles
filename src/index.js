@@ -24,3 +24,4 @@ export { default as Modal } from './modal';
 export { default as ToolTip } from './tooltip';
 export { default as Spinner } from './spinner';
 export { default as Blockquote } from './blockquote';
+export { default as Header } from './header';

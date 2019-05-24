@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 // @flow
 
 import React, { Component, type Node } from 'react';
@@ -23,6 +24,8 @@ type PropsType = {
   secondaryIcon?: Node,
   type?: string,
   variant?: string,
+  className?: string,
+  controlledLoading?: boolean,
 };
 
 type StateType = {
@@ -44,14 +47,16 @@ class Cta extends Component<PropsType, StateType> {
       this.delayConfirmation();
     });
 
+  // eslint-disable-next-line consistent-return
   onClickHandler = () => {
     const { loadingTime, onClick } = this.props;
     if (loadingTime) {
       this.startLoading();
       return onClick();
     }
-
-    return onClick();
+    if (onClick) {
+      return onClick();
+    }
   };
 
   render() {
@@ -63,19 +68,26 @@ class Cta extends Component<PropsType, StateType> {
       secondaryIcon,
       type = 'submit',
       variant = 'solid',
+      className,
+      controlledLoading,
     } = this.props;
 
     return (
       <StyledButton
-        disabled={disabled || buttonState === 'loading'}
+        className={className}
+        disabled={disabled || buttonState === 'loading' || controlledLoading}
         margin={margin}
         onClick={this.onClickHandler}
         type={type}
         variant={variant}
       >
-        <Left>{buttonState === 'ready' && secondaryIcon}</Left>
+        <Left className={className}>
+          {buttonState === 'ready' && secondaryIcon}
+        </Left>
         <Label>
-          {buttonState === 'ready' ? (
+          {controlledLoading ? (
+            <Icon>{ICONS.loading}</Icon>
+          ) : buttonState === 'ready' ? (
             children
           ) : (
             <Icon
@@ -87,7 +99,7 @@ class Cta extends Component<PropsType, StateType> {
             </Icon>
           )}
         </Label>
-        <Spacer />
+        <Spacer className={className} />
       </StyledButton>
     );
   }

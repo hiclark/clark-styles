@@ -2,6 +2,10 @@
 
 import { css } from 'styled-components';
 
+const LS_05 = css`
+  letter-spacing: 0.5px;
+`;
+
 const LS_1 = css`
   letter-spacing: 1px;
 `;
@@ -11,6 +15,7 @@ const LS_2_5 = css`
 `;
 
 const LETTER_SPACING = {
+  LS_05,
   LS_1,
   LS_2_5,
 };
