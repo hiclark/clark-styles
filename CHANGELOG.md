@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 - dashed button
 
+## 0.17.2 - 2019-05-24
+### Fixed
+- Modal doesn't setAppElement when server side rendering
+
 ## 0.17.1 - 2019-04-24
 ### Fixed
 - Release issue with 0.17.0
