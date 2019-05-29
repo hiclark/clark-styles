@@ -10,14 +10,24 @@ import FONT_WEIGHT from '../constants/font-weight';
 import SPACING from '../constants/spacing';
 import Z_INDEX from '../constants/z-index';
 import MEDIA from '../constants/media-queries';
+import LETTER_SPACING from '../constants/letter-spacing';
 
-const { CLARK_PRIMARY, CLARK_SECONDARY, GREY_100, GREY_50, GREY_25, GREY_75, WHITE } = COLORS;
+const {
+  CLARK_PRIMARY,
+  CLARK_SECONDARY,
+  GREY_100,
+  GREY_50,
+  GREY_25,
+  GREY_75,
+  WHITE,
+} = COLORS;
 const { TS_6 } = TYPE_SCALE;
 const { BW_1 } = BORDER_WIDTH;
 const { FW_700 } = FONT_WEIGHT;
 const { BR_2 } = BORDER_RADIUS;
 const { S_1, S_2 } = SPACING;
 const { Z_1, Z_BOTTOM } = Z_INDEX;
+const { LS_1 } = LETTER_SPACING;
 
 const BUTTON_COLOR_PRIMARY = '#FF6B18';
 const BUTTON_COLOR_SECONDARY = '#c43d00';
@@ -76,7 +86,7 @@ const outlineSecondary = disabled => css`
   border: ${BW_1} solid ${disabled ? GREY_25 : GREY_50};
   color: ${disabled ? GREY_25 : GREY_100};
   cursor: ${disabled ? 'auto' : 'pointer'};
-  letter-spacing: 1px;
+  ${LS_1};
   text-transform: uppercase;
 
   &:hover {
@@ -95,13 +105,13 @@ const dashed = disabled => css`
   border: ${BW_1} dashed ${GREY_50};
   color: ${GREY_75};
   cursor: ${disabled ? 'auto' : 'pointer'};
-  letter-spacing: 1px;
+  ${LS_1};
   text-transform: uppercase;
   opacity: ${disabled ? '0.4' : '1'};
 
   &:hover {
     background: ${WHITE};
-    border:  ${BW_1} dashed ${disabled ? GREY_25 : CLARK_SECONDARY};
+    border: ${BW_1} dashed ${disabled ? GREY_25 : CLARK_SECONDARY};
   }
 
   &::before {
