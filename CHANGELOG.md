@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.18.0 - 2019-05-29
+### Added
+- dashed button
+
 ## 0.17.1 - 2019-04-24
 ### Fixed
 - Release issue with 0.17.0
