@@ -28,12 +28,12 @@
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "styled-components": "2.x - 4.x"
+    "styled-components": "2.x - 4.x",
+    "lodash": "4.x",
+    "react-router-dom": "4.x - 5.x"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
-    "react-modal": "^3.6.1",
-    "react-router-dom": "^4.3.1"
+    "react-modal": "^3.6.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
