@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.18.0 - 2019-06-02
+### Fixed
+- used peer deps to reduce package size and fix context issues with react-router-dom
+
 ## 0.18.0 - 2019-05-29
 ### Added
 - dashed button
