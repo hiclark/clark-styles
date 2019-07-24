@@ -2,11 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.17.2 - 2019-07-24
+## 0.19.1 - 2019-07-24
 
 ### Fixed
 
 - Restyles buttons in accordance with designs
+
+## 0.19.0 - 2019-06-02
+
+### Fixed
+
+- used peer deps to reduce package size and fix context issues with react-router-dom
+
+## 0.18.0 - 2019-05-29
+
+### Added
+
+- dashed button
+
+## 0.17.2 - 2019-05-24
+
+### Fixed
+
+- Modal doesn't setAppElement when server side rendering
 
 ## 0.17.1 - 2019-04-24
 

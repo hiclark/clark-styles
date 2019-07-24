@@ -6,7 +6,11 @@ import styled from 'styled-components';
 import COLORS from '../constants/colors';
 import SPACING from '../constants/spacing';
 
-if (typeof document !== 'undefined' && document.getElementById('root')) {
+if (
+  typeof window !== 'undefined' &&
+  typeof document !== 'undefined' &&
+  document.getElementById('root')
+) {
   Modal.setAppElement('#root');
 }
 

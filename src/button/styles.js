@@ -18,6 +18,8 @@ const {
   CLARK_SECONDARY,
   CLARK_ORANGE_HOVER,
   GREY_100,
+  GREY_75,
+  GREY_50,
   GREY_25,
   GREY_10,
   WHITE,
@@ -29,7 +31,7 @@ const { BR_2 } = BORDER_RADIUS;
 const { S_1, S_2 } = SPACING;
 const { Z_1, Z_BOTTOM } = Z_INDEX;
 const { BS_PRIMARY, BS_DISABLED } = BOX_SHADOW;
-const { LS_1_5 } = LETTER_SPACING;
+const { LS_1, LS_1_5 } = LETTER_SPACING;
 
 const BUTTON_COLOR_SECONDARY = '#c43d00';
 
@@ -118,7 +120,7 @@ const outlineSecondary = disabled => css`
   border: ${BW_1} solid ${disabled ? GREY_25 : GREY_10};
   color: ${disabled ? GREY_25 : GREY_100};
   cursor: ${disabled ? 'auto' : 'pointer'};
-  letter-spacing: 1px;
+  ${LS_1};
   text-transform: uppercase;
   ${BS_DISABLED};
 

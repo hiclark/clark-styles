@@ -27,6 +27,8 @@ Run `yarn flow` to start the flow server. If you run into unexpected failures, a
 
 For convience sake, we use the [cut-release](https://github.com/bjoerge/cut-release) project to easily publish to npm and follow SEMVER. **Don't forget to update the changelog!**
 
+Merge your branch into master, run `yarn build`, and then run `cut-release`.
+
 **Once you have cut a release remember to bump the version in your project.**
 
 ### Usage
