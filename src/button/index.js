@@ -41,7 +41,11 @@ const Button = ({
         margin={margin}
         disabled={disabled}
       >
-        {icon && <Icon>{icon}</Icon>}
+        {icon && (
+          <Icon disabled={disabled} styletype={styleType}>
+            {icon}
+          </Icon>
+        )}
         {children}
       </ButtonLink>
     ) : (
@@ -54,7 +58,11 @@ const Button = ({
         disabled={disabled}
         margin={margin}
       >
-        {icon && <Icon>{icon}</Icon>}
+        {icon && (
+          <Icon disabled={disabled} styletype={styleType}>
+            {icon}
+          </Icon>
+        )}
         {children}
       </ButtonStyle>
     )}

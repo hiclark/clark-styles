@@ -9,10 +9,12 @@ import COLORS from '../constants/colors';
 import FONT_WEIGHT from '../constants/font-weight';
 import SPACING from '../constants/spacing';
 import Z_INDEX from '../constants/z-index';
+import BOX_SHADOW from '../constants/box-shadow';
 
 const {
   CLARK_PRIMARY,
   CLARK_SECONDARY,
+  CLARK_ORANGE_HOVER,
   GREY_100,
   GREY_75,
   GREY_25,
@@ -24,15 +26,16 @@ const { FW_700 } = FONT_WEIGHT;
 const { BR_2 } = BORDER_RADIUS;
 const { S_1 } = SPACING;
 const { Z_1 } = Z_INDEX;
-const DARK_ORANGE = '#C43D00';
+const { BS_PRIMARY, BS_DISABLED } = BOX_SHADOW;
 
 const solid = disabled => css`
   background-color: ${disabled ? GREY_25 : CLARK_PRIMARY};
   border: ${BW_1} ${disabled ? GREY_25 : CLARK_PRIMARY};
+  box-shadow: ${disabled ? BS_DISABLED : BS_PRIMARY};
 
   &:hover {
-    background-color: ${disabled ? GREY_25 : DARK_ORANGE};
-    border: ${BW_1} ${disabled ? GREY_25 : DARK_ORANGE};
+    background-color: ${disabled ? GREY_25 : CLARK_ORANGE_HOVER};
+    border: ${BW_1} ${disabled ? GREY_25 : CLARK_ORANGE_HOVER};
   }
 `;
 
@@ -46,13 +49,33 @@ const outline = disabled => css`
   }
 `;
 
+// eslint-disable-next-line no-unused-vars
+const dashedBorder = disabled => css`
+  background: linear-gradient(to right, ${GREY_25} 66%, #fff 0%) top/10px 1px
+      repeat-x,
+    linear-gradient(${GREY_25} 66%, #fff 0%) right/1px 10px repeat-y,
+    linear-gradient(to right, ${GREY_25} 66%, #fff 0%) bottom/10px 1px repeat-x,
+    linear-gradient(${GREY_25} 66%, #fff 0%) left/1px 10px repeat-y;
+`;
+
+// eslint-disable-next-line no-unused-vars
+const dashedBorderHover = disabled => css`
+  background: linear-gradient(to right, ${CLARK_SECONDARY} 66%, #fff 0%)
+      top/10px 1px repeat-x,
+    linear-gradient(${CLARK_SECONDARY} 66%, #fff 0%) right/1px 10px repeat-y,
+    linear-gradient(to right, ${CLARK_SECONDARY} 66%, #fff 0%) bottom/10px 1px
+      repeat-x,
+    linear-gradient(${CLARK_SECONDARY} 66%, #fff 0%) left/1px 10px repeat-y;
+`;
+
 const dashed = disabled => css`
   background-color: ${WHITE};
-  border: ${BW_1} dashed ${disabled ? GREY_25 : GREY_75};
+  ${dashedBorder(disabled)}
   color: ${disabled ? GREY_25 : GREY_100};
 
   &:hover {
-    border: ${BW_1} dashed ${disabled ? GREY_25 : CLARK_SECONDARY};
+    ${dashedBorderHover(disabled)}
+    opactiy: 0.4;
   }
 `;
 

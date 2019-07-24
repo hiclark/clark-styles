@@ -10,6 +10,10 @@ const LS_1 = css`
   letter-spacing: 1px;
 `;
 
+const LS_1_5 = css`
+  letter-spacing: 1.5px;
+`;
+
 const LS_2_5 = css`
   letter-spacing: 2.5px;
 `;
@@ -17,6 +21,7 @@ const LS_2_5 = css`
 const LETTER_SPACING = {
   LS_05,
   LS_1,
+  LS_1_5,
   LS_2_5,
 };
 

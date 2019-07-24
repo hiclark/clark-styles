@@ -3,6 +3,7 @@
 const CLARK_PRIMARY = '#ea4900';
 const CLARK_SECONDARY = '#00cbc4';
 const CLARK_TERTIARY = '#feaf38';
+const CLARK_ORANGE_HOVER = '#c43d00';
 
 const TRANSPARENT = 'transparent';
 
@@ -21,6 +22,7 @@ const COLORS = {
   CLARK_PRIMARY,
   CLARK_SECONDARY,
   CLARK_TERTIARY,
+  CLARK_ORANGE_HOVER,
   TRANSPARENT,
   GREY_100,
   GREY_75,
