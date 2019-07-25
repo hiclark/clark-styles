@@ -26,11 +26,11 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
+    "lodash": "4.x",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "styled-components": "2.x - 4.x",
-    "lodash": "4.x",
-    "react-router-dom": "4.x - 5.x"
+    "react-router-dom": "4.x - 5.x",
+    "styled-components": "2.x - 4.x"
   },
   "dependencies": {
     "react-modal": "^3.6.1"
@@ -64,6 +64,7 @@
     "prettier": "^1.14.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "2.0.3",
     "rollup": "^0.64.1",
     "rollup-plugin-babel": "^3.0.7",
