@@ -29,7 +29,7 @@ const { BR_2 } = BORDER_RADIUS;
 const { S_1, S_2 } = SPACING;
 const { Z_1, Z_BOTTOM } = Z_INDEX;
 const { BS_PRIMARY, BS_DISABLED } = BOX_SHADOW;
-const { LS_1, LS_1_5 } = LETTER_SPACING;
+const { LS_1_5 } = LETTER_SPACING;
 
 const BUTTON_COLOR_SECONDARY = '#c43d00';
 
