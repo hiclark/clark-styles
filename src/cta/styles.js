@@ -10,6 +10,7 @@ import FONT_WEIGHT from '../constants/font-weight';
 import SPACING from '../constants/spacing';
 import Z_INDEX from '../constants/z-index';
 import BOX_SHADOW from '../constants/box-shadow';
+import LETTER_SPACING from '../constants/letter-spacing';
 
 const {
   CLARK_PRIMARY,
@@ -27,6 +28,7 @@ const { BR_2 } = BORDER_RADIUS;
 const { S_1 } = SPACING;
 const { Z_1 } = Z_INDEX;
 const { BS_PRIMARY, BS_DISABLED } = BOX_SHADOW;
+const { LS_1_5 } = LETTER_SPACING;
 
 const solid = disabled => css`
   background-color: ${disabled ? GREY_25 : CLARK_PRIMARY};
@@ -90,6 +92,7 @@ export const StyledButton = styled.button`
   ${BR_2};
   ${Z_1};
   ${FW_700};
+  ${LS_1_5};
   ${({ disabled }) => disabled && 'pointer-events: none;'};
   padding: 0 ${S_1};
   margin: ${({ margin }) => margin};

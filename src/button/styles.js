@@ -118,7 +118,6 @@ const outlineSecondary = disabled => css`
   border: ${BW_1} solid ${disabled ? GREY_25 : GREY_10};
   color: ${disabled ? GREY_25 : GREY_100};
   cursor: ${disabled ? 'auto' : 'pointer'};
-  ${LS_1};
   text-transform: uppercase;
   ${BS_DISABLED};
 
@@ -163,6 +162,7 @@ export const ButtonStyle = styled.button`
   ${({ layout }) => buttonLayout[layout]};
   text-decoration: none;
   ${({ disabled }) => disabled && 'pointer-events: none;'};
+  border: none;
 
   &::before {
     ${BR_2};
