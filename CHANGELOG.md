@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.20.0 - 2019-07-31
+
+### Added
+
+- Text Elements
+
 ## 0.19.1 - 2019-07-24
 
 ### Fixed
