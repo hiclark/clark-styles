@@ -35,6 +35,7 @@ export const H3Headline = styled.div`
 export const BodyLarge = styled.div`
   ${TS_4};
   color: ${GREY_100};
+  ${COPY};
 `;
 
 export const BodyText = styled.div`
