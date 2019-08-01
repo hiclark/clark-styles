@@ -6,11 +6,13 @@ import TYPE_SCALE from '../constants/type-scale';
 import COLORS from '../constants/colors';
 import FONT_WEIGHT from '../constants/font-weight';
 import LETTER_SPACING from '../constants/letter-spacing';
+import LINE_HEIGHT from '../constants/line-height';
 
 const { GREY_100, CLARK_PRIMARY, GREY_75 } = COLORS;
 const { TS_1, TS_2, TS_3, TS_4, TS_5, TS_6 } = TYPE_SCALE;
 const { FW_600 } = FONT_WEIGHT;
 const { LS_1_5 } = LETTER_SPACING;
+const { COPY } = LINE_HEIGHT;
 
 export const H1Headline = styled.div`
   ${TS_1};
@@ -38,11 +40,13 @@ export const BodyLarge = styled.div`
 export const BodyText = styled.div`
   ${TS_5};
   color: ${GREY_100};
+  ${COPY};
 `;
 
 export const BodySmall = styled.div`
   ${TS_6};
   color: ${GREY_100};
+  ${COPY};
 `;
 
 export const CapsLabel = styled.div`

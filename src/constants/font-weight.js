@@ -10,6 +10,10 @@ const FW_600 = css`
   font-weight: 600;
 `;
 
+const FW_500 = css`
+  font-weight: 500;
+`;
+
 const FW_400 = css`
   font-weight: 400;
 `;
@@ -21,6 +25,7 @@ const FW_100 = css`
 const FONT_WEIGHT = {
   FW_700,
   FW_600,
+  FW_500,
   FW_400,
   FW_100,
 };

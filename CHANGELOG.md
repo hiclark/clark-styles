@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Text Elements
+- FW_500
 
 ## 0.19.1 - 2019-07-24
 
