@@ -2,11 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.20.0 - 2019-07-24
+## 0.21.0 - 2019-08-02
 
 ### Fixed
 
 - additional restyles of buttons
+
+## 0.20.0 - 2019-07-31
+
+### Added
+
+- Text Elements
+- FW_500
 
 ## 0.19.1 - 2019-07-24
 
