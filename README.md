@@ -1,4 +1,5 @@
 # Clark Styles
+
 Clark style and pattern library
 
 [![NPM](https://img.shields.io/npm/v/clark-styles.svg)](https://www.npmjs.com/package/clark-styles)
@@ -8,6 +9,10 @@ Clark style and pattern library
 - You will need to install [Yarn](https://yarnpkg.com/en/docs/install) for dependency management, if you do not have it already installed.
 
 - Run the `yarn` command to install `node_modules`
+
+### Local Development Via Yarn Link
+
+Always ensure the `react-router-dom` version listed here in devDependencies matches up with the version being used in the repo. If not, there will be breaking errors that halt local development until resolved.
 
 ### Testing library integration locally
 
@@ -36,10 +41,10 @@ Merge your branch into master, run `yarn build`, and then run `cut-release`.
 To use the library run `yarn add clark-styles`.
 
 ```jsx
-import React from 'react'
+import React from "react";
 
-import { Grid, Col, Row, COLORS, SPACING } from 'clark-styles'
-import styled from 'styled-components'
+import { Grid, Col, Row, COLORS, SPACING } from "clark-styles";
+import styled from "styled-components";
 
 const StyledCol = styled(Col)`
   background: ${COLORS.CLARK_PRIMARY};
@@ -63,8 +68,8 @@ const App = () => (
       <StyledCol sm={3} md={3} lg={3} />
     </Row>
     <Row>
-      <StyledCol sm={3} md={3} lg={3} lgOffset={6}></StyledCol>
-      <StyledCol sm={3} md={3} lg={3}></StyledCol>
+      <StyledCol sm={3} md={3} lg={3} lgOffset={6} />
+      <StyledCol sm={3} md={3} lg={3} />
     </Row>
   </Grid>
 );
