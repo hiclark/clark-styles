@@ -79,6 +79,7 @@ const outline = disabled => css`
   &:hover {
     border: ${BW_1} solid transparent;
     color: ${WHITE};
+    background: ${CLARK_PRIMARY};
   }
 `;
 
