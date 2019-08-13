@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.21.1 - 2019-08-09
+
+### Fixed
+
+- dashed border on outline variant & background hover color on button outline variant
+
 ## 0.21.0 - 2019-08-02
 
 ### Fixed
