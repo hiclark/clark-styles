@@ -17,8 +17,8 @@ const {
   CLARK_SECONDARY,
   CLARK_ORANGE_HOVER,
   GREY_100,
-  GREY_75,
   GREY_25,
+  GREY_10,
   WHITE,
 } = COLORS;
 const { TS_6 } = TYPE_SCALE;
@@ -42,8 +42,9 @@ const solid = disabled => css`
 `;
 
 const outline = disabled => css`
+  ${FW_700};
   background-color: ${WHITE};
-  border: ${BW_1} solid ${disabled ? GREY_25 : GREY_75};
+  border: ${BW_1} solid ${disabled ? GREY_25 : GREY_10};
   color: ${disabled ? GREY_25 : GREY_100};
 
   &:hover {

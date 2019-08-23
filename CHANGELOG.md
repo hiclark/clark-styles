@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.21.1 - 2019-08-23
+
+### Fixed
+
+- Cta outline had wrong border color
+
 ## 0.21.1 - 2019-08-09
 
 ### Fixed
