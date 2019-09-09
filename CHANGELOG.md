@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.22.0 - 2019-09-09
+
+### Added
+
+- H4Header
+- Font Weight on body texts
+
 ## 0.21.2 - 2019-08-23
 
 ### Fixed
